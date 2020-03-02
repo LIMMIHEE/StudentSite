@@ -1,1 +1,1 @@
-# MirimStudentSite
+# StudentSite
