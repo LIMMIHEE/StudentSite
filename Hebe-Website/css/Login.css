@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(../img/jeremy-bishop-0m7Ks0Z00Ro-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    object-fit:contain;
+}
+
+.form-box{
+    width: 35vmin;
+    height: 45.5vmin;
+    position: relative;
+    margin: 6% auto;
+    background-color: white;
+    padding: 4vmin;
+}
+
+.button-Box{
+    width: 28vmin;
+    text-align: center;
+    margin: 1.5vmin auto;
+    position: relative;
+    box-shadow:  0 0 20px 9px  rgba(58, 255, 189, 0.514);
+    border-radius: 30px;
+}
+
+.toggle-btn{
+    margin-right: 16px;
+    padding: 1.5vmin 2.5vmin;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn{
+    top:0; left: 0;
+    position: absolute;
+    width: 14vmin; height: 100%;
+    background: linear-gradient(to right, rgb(125, 247, 141), rgb(114, 231, 240));
+    border-radius: 2vmax;
+    transition: .5s;
+}
+
+.input-group{
+    top: 16vmin;
+    position: absolute;
+    width : 34vmin;
+    transition: .3s;
+}
+
+.input-field{
+    width: 100%;
+    padding: 1vmin 0 ;
+    margin:  0.5vmin 0 ;
+    border-left: 0; border-top: 0; border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.submit-btn{
+    width: 85%; 
+    padding : 1.4vmin 3vmin;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 3vmin;
+    background: linear-gradient(to right, rgb(125, 247, 141), rgb(114, 231, 240));
+    border:0;
+    outline: 0;
+    border-radius: 2vmax;
+}
+.chech-Box{
+    margin: 2vmax 0.6vmax 2vmax 0;
+}
+
+.chech-Box span{
+    color: #777;
+    font-size: 1.7vmax;
+    bottom: 9vmin;
+    position: absolute;
+}
