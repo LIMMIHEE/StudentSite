@@ -4,15 +4,15 @@
         <title>Login & Registration</title>
         <link rel="stylesheet" href="css/Login.css">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-
+        <script type="text/javascript" src="../Hebe-Website/js/script.js"></script>
     </head>
     <body>
         <div class="hero" >
             <div class="form-box">
                 <div class="button-Box">
                     <div id="btn"></div>
-                    <button type="button" class="toggle-btn">로그인</button>
-                    <button type="button" class="toggle-btn" style="margin-left: 16px;">회원가입</button>
+                    <button type="button" class="toggle-btn" onclick="Login()" style="margin-left: 10px;">로그인</button>
+                    <button type="button" class="toggle-btn" style="margin-left: 24px; margin-right: 8px; " onclick="Registr()">회원가입</button>
                 </div>
             
                 <form id="login" class="input-group">
@@ -23,9 +23,9 @@
                 </form>
                 <form id="Registration" class="input-group">
                     <input type="text" class="input-field" placeholder="User Id" required>
-                    <input type="email" class="input-field" placeholder="email Password" required>
+                    <input type="email" class="input-field" placeholder="email" required>
                     <input type="text" class="input-field" placeholder="Enter Password" required>
-                    <input type="checkbox" class="chech-Box"><span>I agree to the trems &conditions</span>
+                    <input type="checkbox" class="chech-Box"><span>세가지 정보 이용에 동의합니다.</span>
                     <button type="submit" class="submit-btn"> 가입하기</button>
                 </form>
         </div>

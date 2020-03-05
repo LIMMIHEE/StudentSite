@@ -21,6 +21,7 @@
     margin: 6% auto;
     background-color: white;
     padding: 4vmin;
+    overflow: hidden;
 }
 
 .button-Box{
@@ -89,4 +90,12 @@
     font-size: 1.7vmax;
     bottom: 9vmin;
     position: absolute;
+}
+
+#login{
+    left: 5vmin;
+}
+
+#Registration{
+    left: 50vmin;
 }
