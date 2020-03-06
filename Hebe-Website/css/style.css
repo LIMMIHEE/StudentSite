@@ -181,9 +181,6 @@
     box-shadow: 0 2px 15px rgba(146, 255, 132, 0.712);
 }
 
-
-
-
 .footer{
     font-weight: bold;
     position: fixed;
@@ -193,4 +190,31 @@
     height: 40px;    width: 100%;
     background: rgba(209, 235, 115, 0.644);
     color:white;
+}
+
+.table {
+    display: table;
+    margin: 40px 0px 10px 0px;
+    text-align: center;
+    line-height: 4;
+}
+.table td {
+    border-collapse: collapse;
+    border-bottom: 1px solid #dadada; 
+}
+.borad_table {
+    margin-top: 15px;
+    border-top: 2px solid rgb(255, 245, 99);
+    border-spacing: 0;
+}
+
+.line_title {
+    text-align: center;
+    height: 230px;
+    width: 1200px;
+    display: table-cell;
+    vertical-align: middle;
+    color: #483834;
+    font-size: 17px;
+    font-weight: normal;
 }
