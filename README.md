@@ -1,7 +1,7 @@
 # HeBe
 학생들을 위한 페이지, 헤베입니다.
 
-https://limmihee.github.io/StudentSite/
+https://limmihee.github.io/StudentSite/<br>
 👆위 링크에서 체험 가능합니다.
 
 > **헤베란?** <br>
