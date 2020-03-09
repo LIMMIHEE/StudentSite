@@ -99,14 +99,12 @@
 .banner{
     display: flex;
     position: relative;
-    margin-top: 80px;
 }
 .left-column,.right-column{
     flex-basis: 50%;
 }
 .right-column img{
     width: 100%;
-    box-shadow:  7px 7px 7px rgba(156, 222, 224, 0.5);
 }
 
 .search-Box{
