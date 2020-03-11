@@ -4,6 +4,7 @@
     font-family: 'Nanum Gothic', sans-serif;
 }
 
+
 .hero{
     height: 100%;
     width: 100%;
@@ -99,3 +100,16 @@
 #Registration{
     left: 50vmin;
 }
+
+
+@media (min-width:0px) and (max-width:834px) { 
+    #btn{
+        top:0; right:0;
+        position: absolute;
+        width: 28vmin; height: 50%;
+        background: linear-gradient(to right, rgb(125, 247, 141), rgb(114, 231, 240));
+        border-radius: 2vmax;
+        transition: .5s;
+    }
+}
+
