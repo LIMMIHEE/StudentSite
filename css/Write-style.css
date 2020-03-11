@@ -140,3 +140,7 @@ select {
     width: 66.5vmax;
     height: 80%;
 }
+button {
+    position: relative;
+    margin: 500px auto;
+}
