@@ -165,6 +165,7 @@ select {
     margin-top: 3vmin;
     font-size: 3vmin;
     width: 66.5vmax;
+
     height: 100%;
 }
 .Btn-up{
@@ -177,13 +178,13 @@ select {
 }
 .uploadBtton{
     font-size: 3vmin;
-    position: absolute;
     border-radius: 20vmin;
     border-style: none;
     background-color: rgba(245, 222, 179, 0);
     border: 0.6vmax solid turquoise;
-    width: 30%;
+    width: 30vmax;
     padding: 1.6vmax;
+    margin-left: 4vmax;
     bottom: 0;
 }
 .uploadBtton:hover{
@@ -201,5 +202,6 @@ select {
 }
 @media (min-width:0px) and (max-width:922px) { 
     .post {margin-left: 2vmin; margin-right: 4vmin;}
-    .banner{height: 110vmin;}
+    .uploadBtton{margin-left: 1vmax;}
+    .banner {height: 102vmin;}
 }
