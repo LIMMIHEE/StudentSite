@@ -94,6 +94,29 @@
     margin-left: 40px;
     cursor: pointer;
 }
+.Menu-bar {
+    display: none;
+    font-size: 1.6vmax;
+    list-style: none;
+    text-align: center;
+    height: auto;
+    border: 0;
+    position: absolute;
+    width: 12vmax;
+    z-index: 30;
+    margin-top: 2vmax;
+}
+.Menu-bar li {
+    padding: 1.3vmin;
+}
+.Menu-bar li :hover {
+    color: turquoise;
+    padding: 1.3vmin;
+}
+.Menu-bar li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
 /* navbar */
 
 .banner{

@@ -4,7 +4,7 @@
         <title>Hebe</title>
         <link rel="stylesheet" href="css/Curious-style.css">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-
+        <script type="text/javascript" src="js/script.js"></script>
     </head>
     <body>
         <div class="hero">
@@ -22,7 +22,15 @@
                     <a href="Login.html" style="text-decoration: none; color: gray; font-size: 1.4vmin; float: left; ">
                         <img src="img/user.png">로그인 / 회원가입
                     </a>
-                    <img src="img/menu.png" class="Menu">
+                    <div class="Menu">
+                        <img src="img/menu.png" onclick="MenuOpenClose()">
+                        <ul class="Menu-bar">
+                            <li><a href="#">모아요</a></li>
+                            <li><a href="Sell.html">팔아요</a></li>
+                            <li><a href="FindIt.html">찾아요</a></li>
+                            <li><a href="Curious.html">궁금해요</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             

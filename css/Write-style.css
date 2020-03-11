@@ -45,6 +45,7 @@
 
 .hero{
     width: 80%; margin: auto;
+    position: relative;
 }
 
 .navbar{
@@ -88,15 +89,41 @@
     margin-left: 40px;
     cursor: pointer;
 }
+.Menu-bar {
+    display: none;
+    font-size: 1.6vmax;
+    list-style: none;
+    text-align: center;
+    height: auto;
+    border: 0;
+    position: absolute;
+    width: 12vmax;
+    z-index: 30;
+    margin-top: 2vmax;
+}
+.Menu-bar li {
+    padding: 1.3vmin;
+}
+.Menu-bar li :hover {
+    color: turquoise;
+    padding: 1.3vmin;
+}
+.Menu-bar li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
 /* navbar */
 
 .banner{
-    display: flex;
+    display: block;
     position: relative;
+    margin:0;
+    padding: 0;
 }
 
 .post {
-    margin: 40px auto 0;
+    width: 40vmin;
+    margin-left: 7vmin;
 }
 
 .carteory {
@@ -131,12 +158,48 @@ select {
     position: absolute;
     font-size: 4vmin;
     width: auto;
-    height: 200vmin;
+    height: 70vmin;
 }
 .post-content textarea {
     resize: none;
     margin-top: 3vmin;
     font-size: 3vmin;
     width: 66.5vmax;
-    height: 80%;
+    height: 100%;
+}
+.Btn-up{
+    display: block;
+    margin-left: 28vmax;
+    margin-bottom: 7vmax;
+    padding-top: 2.4vmin;
+    width: 8vmax;
+    height: 5vmax;
+}
+.uploadBtton{
+    font-size: 3vmin;
+    position: absolute;
+    border-radius: 20vmin;
+    border-style: none;
+    background-color: rgba(245, 222, 179, 0);
+    border: 0.6vmax solid turquoise;
+    width: 30%;
+    padding: 1.6vmax;
+    bottom: 0;
+}
+.uploadBtton:hover{
+    border: 0.6vmax solid rgb(75, 174, 255);
+    color: gray;
+}
+.FileupBtn{
+    margin-top: 4vmin;
+    margin-left: 10vmax;
+}
+@media (min-width:1200px){
+    .FileupBtn{
+        margin-left: 7vmax;
+    }
+}
+@media (min-width:0px) and (max-width:922px) { 
+    .post {margin-left: 2vmin; margin-right: 4vmin;}
+    .banner{height: 110vmin;}
 }
