@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>Hebe</title>
-        <link rel="stylesheet" href="css/Curious-style.css">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/Gather.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
         <script type="text/javascript" src="js/script.js"></script>
     </head>
@@ -35,21 +37,23 @@
             </div>
             
             <div id="setTitle">
-                <h3 style="font-size: 2.5vmax;">궁금해요<span>!!</span></h3>
-                <p style="margin-top: 2.5vmin">궁금해요 설명~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+                <h3 style="font-size: 3vmax; color: rgb(114, 231, 240);">모아요<span style="font-size: 2.5vmax; color: black;">게시판</span></h3>
+                <p style="margin-top: 2.5vmin">이 게시판은 스터디나 공모전과 같은 행사를 진행하기 위해 사람을 모으는 게시판입니다.</p>
             </div>
 
             <div class="banner" style="margin: auto;">
                  <!-- 검색 -->
                  <div class="right-column">
                      <div class="search-Box" style="width: 100%;">
-                        <img src = "img/search.png" style="box-shadow: none;">
+                        <i class="fa fa-search fa-2x" aria-hidden="true"></i>
                         <input type="text">
-                        <select name="kind">
+                        <select name="kind" class="kindlay">
                             <option value="전체">전체</option>
-                            <option value="기타">기타</option>
+                            <option value="스터디">스터디</option>
+                            <option value="공모전">공모전</option>
+                            <option value="프로젝트">프로젝트</option>
                         </select>
-                        <button type="button" onclick="location.href='Write.html'">글쓰기</button>
+                        <button type="button" onclick="location.href='Write.html'"class="WriteBtn">글쓰기</button>
                     </div>
                 </div>
 
@@ -57,35 +61,35 @@
                 <div class="table">
                     <table class="borad_table">
                         <colgroup>
-                            <col width="70px">
+                            <col width="120px">
                             <col width="1000px">
                             <col width="100px">
-                            <col width="100px">
+                            <col width="200px">
                         </colgroup>
                         <tbody>
                             <tr scope="row">
-                                <td>번호</td>
-                                <td>제목</td>
                                 <td>글쓴이</td>
+                                <td>제목</td>
                                 <td>날짜</td>
+                                <td class="GatherTag"><span>#태그2</span></td>
                             </tr>
                             <tr scope="row">
-                                <td>번호</td>
-                                <td>제목</td>
                                 <td>글쓴이</td>
+                                <td>제목</td>
                                 <td>날짜</td>
+                                <td class="GatherTag"><span>#xorm1</span><span>#태그숫자</span><span>#태드3</span></td>
                             </tr>
                             <tr scope="row">
-                                <td>번호</td>
-                                <td>제목</td>
                                 <td>글쓴이</td>
+                                <td>제목</td>
                                 <td>날짜</td>
+                                <td class="GatherTag"><span>#xorm1</span></td>
                             </tr>
                             <tr scope="row">
-                                <td>번호</td>
-                                <td>제목</td>
                                 <td>글쓴이</td>
+                                <td>제목</td>
                                 <td>날짜</td>
+                                <td class="GatherTag"><span>#xorm1</span><span>#xorm1</span></td>
                             </tr>
                         </tbody>
                     </table>
