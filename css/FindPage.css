@@ -92,6 +92,7 @@
        width: 12vmax;
        z-index: 30;
        margin-top: 2vmax;
+       background-color: rgba(255, 255, 255, 0.514);
    }
    .Menu-bar li {
        padding: 1.3vmin;
@@ -106,6 +107,45 @@
    }
    
    /* navbar */
+   .search-Box{
+    width: 45%;
+    display: flex;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #ddd;
+    margin:10px 0 30px;
+    }.search-Box img{
+        margin-top: 1vmax;
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+        
+    }
+    .search-Box input{
+        width: 100%;
+        margin-left: 15px;
+        font-size: 17px;
+        border:0;
+        outline: 0;
+    }
+    .kindlay{
+        width: 10vmax;
+        margin-right: 2vmin;
+        margin-top: 0.7vmin;
+        height: 3vmax;
+    }
+    .WriteBtn{
+        width: 10vmax;
+        border-style: none;
+        border:0.5vmax solid rgb(129, 233, 104);
+        background-color: rgba(128, 128, 128, 0);
+        border-radius: 2em;
+        padding: 1vmin;
+    }
+    .WriteBtn:hover{
+        border: 0.5vmax solid rgb(75, 174, 255);
+        color:gray;
+    }
+
    .Mainform{
         position: relative;
         display:inline-flexbox;
