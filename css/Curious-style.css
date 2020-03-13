@@ -241,3 +241,18 @@
     font-size: 17px;
     font-weight: normal;
 }
+.kindlay{
+    width: 10vmax;
+    margin-right: 2vmin;
+    margin-top: 0.7vmin;
+    height: 2vmax;
+}
+
+.WriteBtn{
+    width: 10vmax;
+    border-style: none;
+    border:0.5vmax solid rgb(129, 233, 104);
+    background-color: rgba(128, 128, 128, 0);
+    border-radius: 2em;
+    padding: 1vmin;
+}
