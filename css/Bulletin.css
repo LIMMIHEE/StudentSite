@@ -138,7 +138,7 @@
 .Comments{
     overflow-y: hidden;
     resize: none;
-    margin: 10px 0 10px 30px;
+    margin: 30px 0 10px 30px;
     width: 90%;
     line-height: 1.6;
 }
@@ -151,6 +151,30 @@
     background-color: rgba(255, 255, 255, 0);
     border: 3px solid gray;
     border-radius: 20px;
+}
+
+.CommentsUploadBtn:hover{
+    border: 3px solid rgb(142, 173, 241);
+}
+.User_Comments{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.User_icon{
+
+    width: 30px;
+    height: 30px;
+}
+.User_id{
+    padding-left: 10px;
+    top: -10px;
+    height: 30px;
+}
+.Comments_Text{
+    margin: 10px 0 10px 0;
+    width: 100%;
+    overflow:hidden;
+    height:auto;
 }
 
 .footer{
