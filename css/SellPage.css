@@ -108,17 +108,17 @@
    
    /* navbar */
    .search-Box{
-    width: 45%;
-    display: flex;
-    padding-bottom: 3px;
-    border-bottom: 1px solid #ddd;
-    margin:10px 0 30px;
-    }.search-Box img{
+        width: 45%;
+        display: flex;
+        padding-bottom: 3px;
+        border-bottom: 1px solid #ddd;
+        margin:10px 7px 30px;
+    }
+    .search-Box img{
         margin-top: 1vmax;
         height: 25px;
         width: 25px;
         cursor: pointer;
-        
     }
     .search-Box input{
         width: 100%;
@@ -154,17 +154,36 @@
         flex-wrap: wrap;
         align-content:stretch;
    }
-   
    .Post {
         display: inline-block;
-        border:2px solid gray;
         border-radius: 3vmax;
-        width: 24vmin;
-        padding: 1.5vmax;
+        width: 40vmin;
+        padding: 0.7vmax 1.5vmin 1vmax;
         background-color: rgb(255, 255, 255);
         text-align: center;
-        margin: 3vmin;
-   }
+    }
+    .inner {
+        position: relative;
+        border: 1px solid rgb(250, 247, 247);
+        background: #fff;
+    }
+    .inner .imgbox{
+        margin-left: 2.3vmin;
+        width: 35vmin;
+        height:35vmin;
+    }
+    .inner span{
+        font-weight: bold;
+        font-size: 2vmax;
+    }
+    .Post span p {
+     font-size: 2vmin;
+    }
+
+    .Post:hover .inner {
+        box-shadow: 0 10px 30px 0 rgba(116, 116, 116, 0.274);
+        transition: 0.5s ease;
+    }
 
     .Mainform{
         position: relative;
