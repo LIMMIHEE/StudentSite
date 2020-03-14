@@ -156,13 +156,13 @@
    }
    .Post{
         display: inline-block;
-       border:2px solid gray;
+        border:2px solid gray;
         border-radius: 3vmax;
-       width: 24vmin;
-       padding: 1.5vmax;
-       background-color: rgb(255, 255, 255);
-       text-align: center;
-       margin: 3vmin;
+        width: 24vmin;
+        padding: 1.5vmax;
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        margin: 3vmin;
    }
    .Post .imgbox{
        margin-left: 2vmin;
