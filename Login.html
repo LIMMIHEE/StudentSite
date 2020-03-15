@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Login & Registration</title>
+        <meta charset="utf-8">
         <link rel="stylesheet" href="css/Login.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -16,17 +17,17 @@
                     <button type="button" class="toggle-btn" onclick="Login()" style="margin-left: 10px;">로그인</button>
                     <button type="button" class="toggle-btn" style="margin-left: 24px; margin-right: 8px; " onclick="Registr()">회원가입</button>
                 </div>
-            
-                <form id="login" class="input-group">
-                    <input type="text" class="input-field" placeholder="User Id" required>
-                    <input type="text" class="input-field" placeholder="Enter Password" required>
+  
+                <form id="login" class="input-group" action="/php/Login.php">
+                    <input type="text" class="input-field" placeholder="User Id" name="User_LoginId" required>
+                    <input type="text" class="input-field" placeholder="Enter Password"   name="LoginPassword" required>
                     <input type="checkbox" class="chech-Box"><span>비밀번호 기억하기</span>
                     <button type="submit" class="submit-btn"> 로그인</button>
                 </form>
-                <form id="Registration" class="input-group">
-                    <input type="text" class="input-field" placeholder="User Id" required>
-                    <input type="email" class="input-field" placeholder="email" required>
-                    <input type="text" class="input-field" placeholder="Enter Password" required>
+                <form id="Registration" class="input-group" action="/php/Registration.php">
+                    <input type="text" class="input-field" placeholder="User Id" name="User_Id" required>
+                    <input type="email" class="input-field" placeholder="email" name="email" required>
+                    <input type="text" class="input-field" placeholder="Enter Password" name="Password" required>
                     <input type="checkbox" class="chech-Box"><span>세가지 정보 이용에 동의합니다.</span>
                     <button type="submit" class="submit-btn"> 가입하기</button>
                 </form>
