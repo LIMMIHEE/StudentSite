@@ -18,9 +18,9 @@
                     <button type="button" class="toggle-btn" style="margin-left: 24px; margin-right: 8px; " onclick="Registr()">회원가입</button>
                 </div>
   
-                <form id="login" class="input-group" action="/php/Login.php">
-                    <input type="text" class="input-field" placeholder="User Id" name="User_LoginId" required>
-                    <input type="text" class="input-field" placeholder="Enter Password"   name="LoginPassword" required>
+                <form id="login" class="input-group" action="/php/Login.php" method="get">
+                    <input type="text" class="input-field" placeholder="User Id" name="User_Id" required>
+                    <input type="text" class="input-field" placeholder="Enter Password"   name="Password" required>
                     <input type="checkbox" class="chech-Box"><span>비밀번호 기억하기</span>
                     <button type="submit" class="submit-btn"> 로그인</button>
                 </form>
