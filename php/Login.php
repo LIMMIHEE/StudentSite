@@ -8,21 +8,24 @@
     $Password= $_GET['Password'];
     
 
-    if($id==""||  $Password="" ){
+    if($id==""||  $Password=="" ){
         echo '<script>alert("아이디나 패스워드를 입력하세요"); location.href="../Login.html";</script> ';
     }else{
          
         $sql = "select * from MemberJoin where User_Id='$id'";
-        $member = mysqli_fetch_array($sql);
-        $hash_pw = $member['LoginPassword'];
+        $result = mysqli_query($conn, $sql);
+        $member = mysqli_fetch_array($result);
+        $hash_pw = $member ['Password'];
 
-        if(password_verify($Password,$hash_pw )){
-            $_SESSION['userid'] = $member['User_LoginId'];
-            $_SESSION['userpw'] = $member['LoginPassword'];
+        //$result = $sql->fetch_array();
+
+        if($Password==$hash_pw){
+            $_SESSION['userid'] = $member['User_id'];
+            $_SESSION['userpw'] = $member['Password'];
 
             echo "<script>alert('로그인되었습니다.'); location.href='../index.html';</script>";
         }else{
-            "<script>alert('아이디 혹은 비밀번호를 확인하세요.'); location.href='../Login.html';</script>";
+            echo "<script>alert('아이디 혹은 비밀번호를 확인하세요.'); location.href='../Login.html';</script>";
         }
     }
 
