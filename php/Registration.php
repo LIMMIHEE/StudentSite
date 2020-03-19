@@ -4,9 +4,9 @@
     $conn = new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
     mysqli_query($conn,'SET NAMES utf8');
 
-    $id= $_POST['User_Id'];
-    $email= $_POST['email'];
-    $Password= $_POST['Password'];
+    $id= $_GET['User_Id'];
+    $email= $_GET['email'];
+    $Password= $_GET['Password'];
 
     $sql="insert into MemberJoin(User_Id,email,Password) values 
     ('$id','$email','$Password')";
@@ -15,4 +15,4 @@
 
 ?>
 <script type="text/javascript">alert('회원가입이 완료되었습니다.');</script>
-<script>location.href='Login.html';</script>
+<script>location.href='../Login.html';</script>

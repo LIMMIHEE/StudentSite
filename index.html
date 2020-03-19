@@ -6,8 +6,10 @@
         <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
         <script type="text/javascript" src="js/script.js"></script>
+
     </head>
-    <body>
+    <body >
+        <form action="/php/Logout.php">
         <div class="hero">
             <div class="navbar">
                 <a href="./index.html"> <img src="img/logo.png"></a>
@@ -21,7 +23,8 @@
                 <div class="navbar-icon">
                     <img src="img/bell.png">
                     <a href="Login.html" style="text-decoration: none; color: gray; font-size: 1.4vmin; float: left; ">
-                        <img src="img/user.png">로그인 / 회원가입
+                        <img src="img/user.png">
+                        <p id="Login_Logout">로그인 / 회원가입</p>
                     </a>
                     
                     <div class="Menu">
@@ -71,6 +74,18 @@
                 <p>Copyright </p>
             </div>
         </div>
+        </form>
     </body>
 
 </html>
+    <!-- <script>
+            
+        var Log_true="<? header('Content-Type:text/html; charset=UTF-8');  $conn = new mysqli('localhost','HeBe','hebeqlalfqjsgh','hebe'); mysqli_query($conn,'SET NAMES utf8');$sql ='select User_Log from MemberJoin where User_Log=1;'' ?>"
+        if(Log_true==true){
+            document.getElementById('Login_Logout').innerText="로그아웃";
+            document.getElementById('Login_Logout').onclick=Logout();
+        }
+        function  Logout(){
+            "<? session_start();    session_destroy(); ?>";
+        }
+    </script> -->
