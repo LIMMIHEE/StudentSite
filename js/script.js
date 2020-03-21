@@ -1,3 +1,10 @@
+// var str = "<?php $conn = new mysqli('localhost','HeBe','hebeqlalfqjsgh','hebe') ?>";
+// $sql ='select User_Log from MemberJoin where User_Log=1;'
+
+// alert($sql);
+// if($sql == 1){
+//     document.getElementById('Login_Logout').innerText="로그아웃";
+// }
 
 
 function Login(){

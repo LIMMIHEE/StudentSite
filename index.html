@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,9 +7,34 @@
         <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
         <script type="text/javascript" src="js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"   
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   
+        crossorigin="anonymous">
+</script>
 
     </head>
     <body >
+        <script>
+         $.ajax({
+                url:"../php/Logout.php",
+                data: {action:'test'},
+                method:"post",
+                success: function (params) {
+                    if(params==1){
+                        document.getElementById('Login_Logout').innerText="로그아웃";
+                        document.getElementById('Login_Logout').onclick = function () {
+                            $.ajax({
+                                url:"../php/Logout_s.php",
+                                success: function (params) {
+                                   
+                                }
+                            })
+                           
+                        }
+                    }
+                }
+        })
+        </script>
         <form action="/php/Logout.php">
         <div class="hero">
             <div class="navbar">
@@ -78,14 +104,3 @@
     </body>
 
 </html>
-    <!-- <script>
-            
-        var Log_true="<? header('Content-Type:text/html; charset=UTF-8');  $conn = new mysqli('localhost','HeBe','hebeqlalfqjsgh','hebe'); mysqli_query($conn,'SET NAMES utf8');$sql ='select User_Log from MemberJoin where User_Log=1;'' ?>"
-        if(Log_true==true){
-            document.getElementById('Login_Logout').innerText="로그아웃";
-            document.getElementById('Login_Logout').onclick=Logout();
-        }
-        function  Logout(){
-            "<? session_start();    session_destroy(); ?>";
-        }
-    </script> -->
