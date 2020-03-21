@@ -1,14 +1,14 @@
 <?php
-    session_start();
+
     header("Content-Type:text/html; charset=UTF-8");
-    $conn = new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
+    $conn = new mysqli("localhost","root","apmsetup","hebe");
     mysqli_query($conn,'SET NAMES utf8');
 
     $id= $_GET['User_Id'];
     $email= $_GET['email'];
     $Password= $_GET['Password'];
 
-    $sql="insert into MemberJoin(User_Id,email,Password) values 
+    $sql="insert into memberjoin(User_id,email,Password) values 
     ('$id','$email','$Password')";
 
     $res = $conn->query($sql);
