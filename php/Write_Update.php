@@ -25,20 +25,67 @@
       $date = date('Y-m-d H:i:s');
       $Tag = $_POST['tag'];
 
-      $sql2 = "insert into curious_post(id, carteory, title, content, date, tag) values ('$id', '$Carteory', '$Title', '$Content', '$date', '$Tag')"; 
+      if(isset($_FILES['profile'])) {
+         print "file";
+         $imagecheck = array('jpg', 'jpeg', 'gif', 'png', 'bmp');
+         $imgpath = pathinfo($_FILES['profile']['name']);
+
+         $file_name = $_FILES['profile']['name'];                // 업로드한 파일명
+         $file_tmp_name = $_FILES['profile']['tmp_name'];   // 임시 디렉토리에 저장된 파일명
+         $file_size = $_FILES['profile']['size'];                 // 업로드한 파일의 크기
+         $mimeType = $_FILES['profile']['type'];                 // 업로드한 파일의 MIME Type
+
+         // 첨부 파일이 저장될 서버 디렉토리 지정
+         $save_dir = '../uploadFile/';
+
+         // 업로드 파일 확장자 검사
+         if(in_array($mimeType, $imagecheck)) {
+               echo("<script> alert('업로드를 할 수 없는 파일형식입니다.'); </script>");  
+               echo("<script>location.href='../Write.html';</script>");
+		         exit;
+         } 
+         // 파일명 변경
+   	   $real_name = $file_name;     // 원래 파일명(업로드 하기 전 실제 파일명) 
+	      $arr = explode(".", $real_name);	 // 원래 파일의 확장자명을 가져와서 그대로 적용 $file_exe	
+   	   //$file_exe = $mimeType;
+         $arr1 = $arr[0];	
+         $arr2 = $arr[1];	
+         $arr3 = $arr[2];
+         $arr4 = $arr[3];	
+         if($arr4) {
+            $file_exe = $arr4;
+         } else if($arr3 && !$arr4) { 
+            $file_exe = $arr3;					
+         } else if($arr2 && !$arr3) {
+            $file_exe = $arr2;					
+         }
+      
+   	   $file_time = time(); 
+      	$file_Name = "file_".$file_time.".".$file_exe;	 // 실제 업로드 될 파일명 생성
+      	$change_file_name = $file_Name;			 // 변경된 파일명을 변수에 지정 
+      	$real_name = addslashes($real_name);		// 업로드 되는 원래 파일명(업로드 하기 전 실제 파일명) 
+      	$real_size = $file_size;                         // 업로드 되는 파일 크기
+
+         //파일을 저장할 디렉토리 및 파일명 전체 경로
+         $dest_url = $save_dir . $change_file_name;
+
+         //파일을 지정한 디렉토리에 업로드
+         if(!move_uploaded_file($file_tmp_name, $dest_url))  {
+            die("파일을 지정한 디렉토리에 업로드하는데 실패했습니다.");
+         }
+      }
+
+      $sql2 = "insert into curious_post(id, carteory, title, content, date, tag, change_file_name, real_name, real_size) values 
+      ('$id', '$Carteory', '$Title', '$Content', '$date', '$Tag', '$change_file_name', '$real_name', '$real_size')"; 
 
       $result = mysqli_query($conn, $sql2);
 
       if($result) { //query가 정상실행 되었다면,
-         $msg = "정상적으로 글이 등록되었습니다.";
+         echo("<script> alert('정상적으로 글이 등록되었습니다.'); </script>");
       }
       else {
-         $msg = "글을 등록하지 못했습니다.";
+         echo("<script> alert('글을 등록하지 못했습니다.'); </script>");
       }
    }
-   else {
-         print "else";
-   }
 ?>
-<script type="text/javascript">alert($msg);</script>
-<script>location.href='../Login.html';</script>
+<script>location.href='../Write.html';</script>
