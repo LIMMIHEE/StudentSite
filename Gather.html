@@ -9,6 +9,27 @@
         <script type="text/javascript" src="js/script.js"></script>
     </head>
     <body>
+        <script>
+            $.ajax({
+                   url:"../php/Logout.php",
+                   data: {action:'test'},
+                   method:"post",
+                   success: function (params) {
+                       if(params==1){
+                           document.getElementById('Login_Logout').innerText="로그아웃";
+                           document.getElementById('Log_inout_btn').onclick = function () {
+                               $.ajax({
+                                   url:"../php/Logout_s.php",
+                                   success: function (params) {
+                                      
+                                   }
+                               })
+                              
+                           }
+                       }
+                   }
+           })
+           </script>
         <div class="hero">
             <div class="navbar">
                 <a href="./index.html"> <img src="img/logo.png"></a>

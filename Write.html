@@ -6,9 +6,34 @@
         <link rel="stylesheet" href="css/Write-style.css">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
         <script type="text/javascript" src="js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"   
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   
+        crossorigin="anonymous">
+        </script>
 
     </head>
     <body>
+        <script>
+            $.ajax({
+                   url:"../php/Logout.php",
+                   data: {action:'test'},
+                   method:"post",
+                   success: function (params) {
+                       if(params==1){
+                           document.getElementById('Login_Logout').innerText="로그아웃";
+                           document.getElementById('Log_inout_btn').onclick = function () {
+                               $.ajax({
+                                   url:"../php/Logout_s.php",
+                                   success: function (params) {
+                                      
+                                   }
+                               })
+                              
+                           }
+                       }
+                   }
+           })
+           </script>
         <div class="hero">
             <div class="navbar">
                 <a href="./index.html"> <img src="img/logo.png"></a>
@@ -29,7 +54,7 @@
                         <img src="img/menu.png" onclick="MenuOpenClose()">
                         <ul class="Menu-bar">
                             <li><a href="Gather.html">모아요</a></li>
-                            <li><a href="#">팔아요</a></li>
+                            <li><a href="Sell.html">팔아요</a></li>
                             <li><a href="FindIt.html">찾아요</a></li>
                             <li><a href="Curious.html">궁금해요</a></li>
                         </ul>
