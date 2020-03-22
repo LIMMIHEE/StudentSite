@@ -1,7 +1,7 @@
 <?php
     session_start();
     header("Content-Type:text/html; charset=UTF-8");
-    $conn = new mysqli("localhost","root","apmsetup","hebe");
+    $conn = new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
     mysqli_query($conn,'SET NAMES utf8');
 
     $id= $_GET['User_Id'];
@@ -34,4 +34,4 @@
     }
 
 
-?>
+?>   

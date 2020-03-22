@@ -22,7 +22,7 @@
                 success: function (params) {
                     if(params==1){
                         document.getElementById('Login_Logout').innerText="로그아웃";
-                        document.getElementById('Login_Logout').onclick = function () {
+                        document.getElementById('Log_inout_btn').onclick = function () {
                             $.ajax({
                                 url:"../php/Logout_s.php",
                                 success: function (params) {
@@ -48,7 +48,7 @@
                 </ul>
                 <div class="navbar-icon">
                     <img src="img/bell.png">
-                    <a href="Login.html" style="text-decoration: none; color: gray; font-size: 1.4vmin; float: left; ">
+                    <a href="Login.html" style="text-decoration: none; color: gray; font-size: 1.4vmin; float: left; " id="Log_inout_btn">
                         <img src="img/user.png">
                         <p id="Login_Logout">로그인 / 회원가입</p>
                     </a>

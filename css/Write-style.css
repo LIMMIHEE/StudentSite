@@ -169,25 +169,6 @@ select {
 
     height: 100%;
 }
-.post-tag {
-    position: relative;
-    width: 860px;
-    margin: 500px auto 17px;
-    font-size: 4vmin;
-}
-.post-tag h3 {
-    float: left;
-}
-.post-tag input {
-    margin-left: 10px;
-    border: none;
-    outline:none;
-    padding-bottom: 2vmin;
-    border-bottom: 1.5px solid rgba(0,0,0,.05);
-    font-size: 4vmin;
-    width: 92%;
-}
-
 .Btn-up{
     display: block;
     margin-left: 28vmax;

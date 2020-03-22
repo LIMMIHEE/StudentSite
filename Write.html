@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="css/Write-style.css">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
         <script type="text/javascript" src="js/script.js"></script>
-    </head>
 
+    </head>
     <body>
         <div class="hero">
             <div class="navbar">
@@ -15,7 +15,7 @@
                 <ul class="navbar_ul"> 
                     <li><a href="index.html">Home</a></li>
                     <li><a href="Gather.html">모아요</a></li>
-                    <li><a href="Sell.html">팔아요</a></li>
+                    <li><a href="#">팔아요</a></li>
                     <li><a href="FindIt.html">찾아요</a></li>
                     <li><a href="Curious.html">궁금해요</a></li>
                 </ul>
@@ -35,45 +35,41 @@
                         </ul>
                     </div>
                 </div>
+                
             </div>
 
             <div class="banner">
                 <div class="post">
-
                     <div class="carteory">
-                        <select name="carteory" id="Carteory">
+                        <select name="carteory">
                             <option value="전체">전체</option>
                             <option value="기타">기타</option>
                         </select>
                     </div>
-
                     <div class="post-title">
                         <h3>제목</h3>
-                        <input id="Title" type="text" placeholder="제목을 입력하세요.">
+                        <input type="text" placeholder="제목을 입력하세요.">
                     </div>
-
                     <div class="post-content">
-                        <h3>내용</h3>
-                        <textarea id="Content" placeholder="내용을 입력하세요."></textarea>
-                    </div>    
-                    
-                    <div class="post-tag">
-                        <h3>태그</h3>
-                        <input id="Tag" type="text" placeholder="#">
+                        <h3 >내용</h3>
+                        <textarea placeholder="내용을 입력하세요."></textarea>
                     </div>
+                    
+                    
+                    </div>
+                    
                 </div>
+                
             </div>
-
             <form action="" method="post" enctype="multipart/form-data" class="FileupBtn">
                 <input type="file" name="profile" >
             </form>
-
             <div class="Btn-up">
+                
                 <form method="post" action="Write_Update.php" >
                     <button class="uploadBtton">작성</button>
                 </form>
             </div>
-
         </div>
     </body>
 </html>
