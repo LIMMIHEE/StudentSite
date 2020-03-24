@@ -3,7 +3,7 @@
    session_start();
    $id = $_SESSION['userid'];
 
-   $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
+   $conn = new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
    mysqli_query($conn,'SET NAMES utf8');
    if($conn->connect_error) {
        print $conn->connect_error;

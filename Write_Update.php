@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <?PHP
-   $conn=new mysqli('localhost', 'root', '"db');
+    $conn = new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
    if($conn->connect_error) {
        print $conn->connect_error;
    }
