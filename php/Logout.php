@@ -1,6 +1,6 @@
 <?php
-    header("Content-Type:text/html; charset=UTF-8");
     session_start();
+    header("Content-Type:text/html; charset=UTF-8");
     $id = $_SESSION['userid'];
     $conn = new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
     mysqli_query($conn,'SET NAMES utf8');

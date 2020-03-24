@@ -12,6 +12,27 @@
         </script>
     </head>
     <body>
+        <script>
+            $.ajax({
+                   url:"../php/Logout.php",
+                   data: {action:'test'},
+                   method:"post",
+                   success: function (params) {
+                       if(params==1){
+                           document.getElementById('Login_Logout').innerText="로그아웃";
+                           document.getElementById('Log_inout_btn').onclick = function () {
+                               $.ajax({
+                                   url:"../php/Logout_s.php",
+                                   success: function (params) {
+                                      
+                                   }
+                               })
+                              
+                           }
+                       }
+                   }
+           })
+           </script>
         <div class="hero">
             <div class="navbar">
                 <a href="./index.html"> <img src="img/logo.png"></a>
@@ -25,7 +46,8 @@
                 <div class="navbar-icon">
                     <img src="img/bell.png">
                     <a href="Login.html" style="text-decoration: none; color: gray; font-size: 1.4vmin; float: left; ">
-                        <img src="img/user.png">로그인 / 회원가입
+                        <img src="img/user.png">
+                        <p id="Login_Logout">로그인 / 회원가입</p>
                     </a>
                     
                     <div class="Menu">
