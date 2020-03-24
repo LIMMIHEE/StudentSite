@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Hebe</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css/Curious-style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-        <script type="text/javascript" src="js/script.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.js"   
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   
-        crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <script>
+
+<head>
+    <title>Hebe</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/Curious-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+    
+    <script>
             $.ajax({
-                   url:"../php/Logout.php",
+                url:"../php/Logout.php",
                    data: {action:'test'},
                    method:"post",
                    success: function (params) {
@@ -37,7 +39,7 @@
             <div class="navbar">
                 <a href="./index.html"> <img src="img/logo.png"></a>
                 <ul class="navbar_ul"> 
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="Gather.html">모아요</a></li>
                     <li><a href="Sell.html">팔아요</a></li>
                     <li><a href="FindIt.html">찾아요</a></li>
@@ -60,75 +62,62 @@
                     </div>
                 </div>
             </div>
-        
+            
             <div id="setTitle">
-                <h3 style="font-size: 2.6vmax;color: rgb(114, 240, 131);">궁금해요<span style="font-size: 2.5vmax; color: black;">게시판</span></h3>
+                <h3 style="font-size: 3vmax; color: rgb(114, 240, 131);">궁금해요<span style="font-size: 2.5vmax; color: black;">게시판</span></h3>
                 <p style="margin-top: 2.5vmin">이 게시판은 학교 생활, 과별 과목 등과 같은 학교에 관한 궁금한 점을 물어보는 게시판입니다.</p>
-                <div class="Circle_1"></div>
-                <div class="Circle_2"></div>
             </div>
-
+            
             <div class="banner" style="margin: auto;">
                  <!-- 검색 -->
                  <div class="right-column">
                      <div class="search-Box" style="width: 100%;">
                         <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+                        <img src = "img/search.png" style="box-shadow: none;">
                         <input type="text">
                         <select name="kind" class="kindlay">
                             <option value="전체">전체</option>
-                            <option value="스터디">스터디</option>
-                            <option value="공모전">공모전</option>
-                            <option value="프로젝트">프로젝트</option>
+                            <option value="기타">기타</option>
                         </select>
+                        <button type="button" onclick="location.href='Write.html'"class="WriteBtn">글쓰기</button>
                     </div>
                 </div>
-
-                <button type="button" onclick="location.href='Write.html'"class="WriteBtn">글쓰기</button>
+                
                 <!-- 테이블 -->
                 <div class="table">
-                    <table class="borad_info" style="border: none;">
-                        <colgroup>
-                            <col width="180px">
-                            <col width="1200px">
-                            <col width="200px">
-                         
-                        </colgroup>
-                        <tr class="row-info">
-                            <td>글쓴이</td>
-                            <td>제목</td>
-                            <td>날짜</td>
-                          
-                    </tr>
-                    </table>
                     <table class="borad_table">
                         <colgroup>
-                            <col width="180px">
-                            <col width="1200px">
-                            <col width="200px">
-                          
+                            <col width="10px">
+                            <col width="800px">
+                            <col width="100px">
+                            <col width="100px">
                         </colgroup>
+                        
+                        <?php
+                            $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
+                            mysqli_query($conn,'SET NAMES utf8');
+                            if($conn->connect_error) {
+                                print $conn->connect_error;
+                            }
+
+                            $sql = "select id, title, date, tag from curious_post order by change_file_name desc limit 0,5";
+                            $result = mysqli_query($conn, $sql);
+                            while ($row = mysqli_fetch_array ($result)) {
+                                $title=$row["title"]; 
+                                if(strlen($title)>30)
+                                { 
+                                    $title=str_replace($row["title"],mb_substr($row["title"],0,30,"utf-8")."...",$row["title"]);
+                                }
+                        ?>
                         <tbody>
                             <tr scope="row">
-                                <td>글쓴이</td>
-                                <td>제목</td>
-                                <td>날짜</td>
+                                <td><?php echo $row['id']; ?></td>
+                                <td><a href=""><?php echo $title; ?></a></td>
+                                <td><?php echo $row['date']; ?></td>
+                                <td><?php echo $row['tag']; ?></td>
                             </tr>
-                            <tr scope="row">
-                                <td>글쓴이</td>
-                                <td>제목</td>
-                                <td>날짜</td>
-                            </tr>
-                            <tr scope="row">
-                                <td>글쓴이</td>
-                                <td>제목</td>
-                                <td>날짜</td>
-                            </tr>
-                            <tr scope="row">
-                                <td>글쓴이</td>
-                                <td>제목</td>
-                                <td>날짜</td>
-                            </tr>
-                        </tbody>
+                        </tbody>    
+                        <?php } ?>
                     </table>
                 </div>
            </div>

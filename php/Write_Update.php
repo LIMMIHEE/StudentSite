@@ -27,7 +27,7 @@
 
       if(isset($_FILES['profile'])) {
          print "file";
-         $imagecheck = array('jpg', 'jpeg', 'gif', 'png', 'bmp');
+         // $imagecheck = array('jpg', 'jpeg', 'gif', 'png', 'bmp');
          $imgpath = pathinfo($_FILES['profile']['name']);
 
          $file_name = $_FILES['profile']['name'];                // 업로드한 파일명
@@ -39,11 +39,12 @@
          $save_dir = '../uploadFile/';
 
          // 업로드 파일 확장자 검사
-         if(in_array($mimeType, $imagecheck)) {
-               echo("<script> alert('업로드를 할 수 없는 파일형식입니다.'); </script>");  
-               echo("<script>location.href='../Write.html';</script>");
-		         exit;
-         } 
+         // if(in_array($mimeType, $imagecheck)) {
+         //       echo("<script> alert('업로드를 할 수 없는 파일형식입니다.'); </script>");  
+         //       echo("<script>location.href='../Write.html';</script>");
+		   //       exit;
+         // } 
+
          // 파일명 변경
    	   $real_name = $file_name;     // 원래 파일명(업로드 하기 전 실제 파일명) 
 	      $arr = explode(".", $real_name);	 // 원래 파일의 확장자명을 가져와서 그대로 적용 $file_exe	
