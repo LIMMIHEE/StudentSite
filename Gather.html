@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
         <script type="text/javascript" src="js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"   
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   
+        crossorigin="anonymous"></script>
     </head>
     <body>
         <script>
@@ -58,8 +61,10 @@
             </div>
             
             <div id="setTitle">
-                <h3 style="font-size: 3vmax; color: rgb(114, 231, 240);">모아요<span style="font-size: 2.5vmax; color: black;">게시판</span></h3>
-                <p style="margin-top: 2.5vmin">이 게시판은 스터디나 공모전과 같은 행사를 진행하기 위해 사람을 모으는 게시판입니다.</p>
+                <h3 style="font-size: 2.6vmax; color: rgb(114, 231, 240);">모아요<span style="font-size: 2.5vmax; color: black;">게시판</span></h3>
+                <p style="margin-top: 1.6vmin">이 게시판은 스터디나 공모전과 같은 행사를 진행하기 위해 사람을 모으는 게시판입니다.</p>
+                <div class="Circle_1"></div>
+                <div class="Circle_2"></div>
             </div>
 
             <div class="banner" style="margin: auto;">
@@ -74,18 +79,32 @@
                             <option value="공모전">공모전</option>
                             <option value="프로젝트">프로젝트</option>
                         </select>
-                        <button type="button" onclick="location.href='Write.html'"class="WriteBtn">글쓰기</button>
                     </div>
                 </div>
 
+                <button type="button" onclick="location.href='Write.html'"class="WriteBtn">글쓰기</button>
                 <!-- 테이블 -->
                 <div class="table">
-                    <table class="borad_table">
+                    <table class="borad_info" style="border: none;">
                         <colgroup>
-                            <col width="120px">
+                            <col width="180px">
                             <col width="1000px">
                             <col width="100px">
-                            <col width="200px">
+                            <col width="300px">
+                        </colgroup>
+                        <tr class="row-info">
+                            <td>글쓴이</td>
+                            <td>제목</td>
+                            <td>날짜</td>
+                            <td>관련 태그</td>
+                    </tr>
+                    </table>
+                    <table class="borad_table">
+                        <colgroup>
+                            <col width="180px">
+                            <col width="1000px">
+                            <col width="100px">
+                            <col width="300px">
                         </colgroup>
                         <tbody>
                             <tr scope="row">
@@ -98,7 +117,7 @@
                                 <td>글쓴이</td>
                                 <td>제목</td>
                                 <td>날짜</td>
-                                <td class="GatherTag"><span>#xorm1</span><span>#태그숫자</span><span>#태드3</span></td>
+                                <td class="GatherTag"><span>#xorm1</span></td>
                             </tr>
                             <tr scope="row">
                                 <td>글쓴이</td>
@@ -110,7 +129,7 @@
                                 <td>글쓴이</td>
                                 <td>제목</td>
                                 <td>날짜</td>
-                                <td class="GatherTag"><span>#xorm1</span><span>#xorm1</span></td>
+                                <td class="GatherTag"><span>#xorm1</span></td>
                             </tr>
                         </tbody>
                     </table>

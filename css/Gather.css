@@ -113,11 +113,12 @@
 /* navbar */
 
 .right-column{
+    width: 600px;
     top:0;
     margin-top: -5vmax;
 }
 .search-Box{
-    width: 45%;
+    width: 100%;
     display: flex;
     padding-bottom: 2px;
     border-bottom: 1px solid #ddd;
@@ -131,21 +132,25 @@
     outline: 0;
 }
 .kindlay{
+    border: none;
     width: 10vmax;
     margin-right: 2vmin;
     margin-top: 0.7vmin;
     height: 2vmax;
 }
 .WriteBtn{
-    width: 10vmax;
+    position: absolute;
+    left: 0;
+    margin-top: -64px;
+    width: 100px;
     border-style: none;
-    border:0.5vmax solid rgb(129, 233, 104);
+    border:7px solid rgb(150, 243, 227);
     background-color: rgba(128, 128, 128, 0);
-    border-radius: 2em;
-    padding: 1vmin;
+    border-radius: 0.3em; padding: 1vmin; margin-left: 60px;
+    font-size: medium; font-weight: bold;
 }
 .WriteBtn:hover{
-    border: 0.5vmax solid rgb(75, 174, 255);
+    border: 07px solid rgb(75, 174, 255);
     color:gray;
 }
 
@@ -158,7 +163,7 @@
     padding-top: 5px ;padding-bottom: 5px ;
     text-align: center;
     height: 40px;    width: 100%;
-    background: rgba(209, 235, 115, 0.644);
+    background: rgba(184, 255, 234, 0.644);
     color:white;
 }
 
@@ -168,46 +173,77 @@
     width: 100%;
     margin-top: 8vmin;
     text-align: center;
-    line-height: 4;
+    line-height: 3.4;
 }
 .table td {
     border-collapse: collapse;
     border-bottom: 1px solid #dadada; 
 }
+.borad_info{
+    width: 100%;
+}
 .borad_table {
     margin-top: 15px;
-    border-top: 2px solid rgb(255, 245, 99);
+    border-top: 2px solid rgb(138, 212, 255);
     border-spacing: 0;
 }
 
 #setTitle {
     position: relative;
     text-align: center;
-    height: 130px;
-    width: 1200px;
+    height: 160px;
+    width: 1400px;
     display: table-cell;
     vertical-align: middle;
     color: #483834;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: normal;
+    padding-bottom: 70px;
 }
 .borad_table tbody tr td span{
     text-align: left;
     width: 100%;
-    border: 4px solid rgba(75, 174, 255, 0.76);
+    background-color: rgba(75, 174, 255, 0.76);
     border-radius: 10vmin;
-    padding: 1vmin;
-    color: rgb(70, 70, 70);
+    padding: 1.4vmin;
+    color: rgba(255, 255, 255, 0.945);font-weight: 700;
     margin-left: 0.6vmax;
+}
+.row-info{
+    border: none;
+    height: 30px;
+    text-shadow: azure;
+    font-weight: bold;
+    
+}
+.row-info td{
+    border-bottom:none;
 }
 
 .GatherTag{
-    text-align: left;
+    text-align: center;
     font-size: 11pt;
 }
 
+.Circle_1{
+    width: 6vmin;
+    height: 6vmin;
+    margin-top: -8vmin;
+    margin-left: 38%;
+    background-color: rgb(220, 255, 250);
+    border-radius: 100%;
+}
+.Circle_2{
+    width: 3vmin;
+    height: 3vmin;
+    margin-top: -7vmin;
+    margin-left: 36%;
+    background-color: rgb(195, 222, 245);
+    border-radius: 100%;
+}
 @media (min-width:0px) and (max-width:1130px) {
-    .search-Box{width: 100%; margin-top:0px;}
+    .search-Box{width: 50%; margin-top:0px;}
     .right-column{  margin-top: -6vmax; width: 60vmin;}
     .GatherTag{    font-size: 9pt;    }
+    .WriteBtn{margin-left: 0;}
 }
