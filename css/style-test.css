@@ -6,31 +6,95 @@
 }
 .Circle_1{
     overflow: hidden;
-    margin-top: -240px;
-    margin-left: 60px;
-    width: 700px;
-    height: 700px;
-    border-radius: 100%;
-    background: linear-gradient(rgb(125, 247, 141), rgb(114, 231, 240));
+    margin-top: -240px;  margin-left: 60px;
+    width: 700px;  height: 700px;
+    border-radius: 100%;  background: linear-gradient(rgb(125, 247, 141), rgb(114, 231, 240));
 }
 .Circle_2{
     overflow: hidden;
-    margin-top: -560px;
-    margin-left: 710px;
-    width: 300px;
-    height: 300px;
-    border-radius: 100%;
-    background: linear-gradient(rgba(253, 255, 136, 0.911), rgba(92, 255, 127, 0.897));
+    margin-top: -560px;  margin-left: 710px; width: 300px;  height: 300px;
+    border-radius: 100%; background: linear-gradient(rgba(253, 255, 136, 0.911), rgba(92, 255, 127, 0.897));
 }
 .Circle_3{
-    overflow: hidden;
-    margin-top: -190px;
-    width: 340px;
-    height: 340px;
-    border-radius: 100%;
-    background: linear-gradient(rgba(100, 255, 239, 0.575), rgb(208, 236, 255, 0.575));
+    overflow: hidden; margin-top: -190px; width: 340px; height: 340px;
+    border-radius: 100%;   background: linear-gradient(rgba(100, 255, 239, 0.575), rgb(208, 236, 255, 0.575));
 
 }
+.left-column-ani{
+    position: relative;
+    animation-name: info;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode:forwards ;
+}
+.Btn_main{
+    animation-name: info_btn;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode:forwards ;
+}
+.Project_bar{
+    animation-name: back_bar;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode:forwards ;
+}
+@keyframes info_btn{
+    0%{opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes info{
+    0%{right: -80px;}
+    100% {right:0;}
+}
+@keyframes back_bar{
+    0%{left: -80px;}
+    100% {left:0;}
+}
+.test0div {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 0.75;
+  }
+  
+  .name {
+    display: block;
+  }
+  
+  .name:not(.light) {
+    opacity: 0;
+    animation: flashText .5s ease-out alternate infinite;
+  }
+  
+  .name.light {
+    position: relative;
+    display: inline-block;
+  }
+  .name.light:before {
+    position: absolute;
+    left: 0;
+    top: -10%;
+    width: 100%;
+    height: 120%;
+    filter: blur(10px);
+    content: "";
+    opacity: 0;
+    animation: flash .5s ease-out alternate infinite;
+  }
+  @keyframes flash{
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes flashText {
+    to {
+      opacity: 0.6;
+    }
+  }
+
+
+
 
  /* PC */
  .wrap{width:1200px;  margin:0 auto;}
