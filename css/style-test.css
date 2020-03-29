@@ -51,33 +51,25 @@
     0%{left: -80px;}
     100% {left:0;}
 }
-.test0div {
+.onoff_text_test {
+    color: white;
     font-weight: bold;
-    font-size: 3rem;
-    line-height: 0.75;
+    font-size: 2rem;
+    line-height: 0.85;
   }
   
   .name {
     display: block;
+    color: turquoise;
   }
   
   .name:not(.light) {
-    opacity: 0;
+    opacity: 0.2;
     animation: flashText .5s ease-out alternate infinite;
   }
   
-  .name.light {
-    position: relative;
-    display: inline-block;
-  }
   .name.light:before {
-    position: absolute;
-    left: 0;
-    top: -10%;
-    width: 100%;
-    height: 120%;
     filter: blur(10px);
-    content: "";
     opacity: 0;
     animation: flash .5s ease-out alternate infinite;
   }
@@ -89,7 +81,7 @@
   
   @keyframes flashText {
     to {
-      opacity: 0.6;
+      opacity: 0.9;
     }
   }
 
@@ -115,6 +107,7 @@
  .go-otherPage{display: block; padding-top: 40px;}
 }
 @media (min-width:701px) and ( max-width: 900px){/* 노트북 */
+ .left-column-ani span {color:rgb(60, 255, 0);}
  .navbar_ul {display: none;}
  .right-column{ padding-top: 12vw;}
  .left-column{height: 500px;}
@@ -133,6 +126,7 @@
 
  /* clear:both == float:none; */
 }
+
 
 
 
@@ -234,16 +228,15 @@
 .left-column h3{
     font-size:  2.5vmax;
 }
-.left-column span{
-    color: rgb(135, 241, 102);
-}
 .left-column p{
     font-weight: 550;
     font-size:  1.2vmax;
     color: rgba(0, 0, 0, 0.76);
     margin : 50px 0;
 }
-
+.left-column-ani span{
+    color: rgb(135, 241, 102);
+}
 .Btn_main button{
     padding: 7px 30px;
     margin-right: 15px;
@@ -295,3 +288,10 @@
     background-color: rgba(114, 232, 240, 0.534); width: 85%; height: 80px; border-radius: 20px; margin:3vmax;
     margin-left: -50vmin; position: relative;
 }
+
+@media (max-width:900px){/* 핸드폰 */
+    .left-column-ani span {color:rgb(238, 255, 243);}
+   
+    /* clear:both == float:none; */
+   }
+   
