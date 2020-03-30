@@ -10,6 +10,15 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   
         crossorigin="anonymous">
         </script>
+        <?php
+            $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
+            mysqli_query($conn,'SET NAMES utf8');
+            if($conn->connect_error) {
+                print $conn->connect_error;
+            }
+
+            $location = "findlt_post";
+        ?>
     </head>
     <body>
         <script>
@@ -70,7 +79,7 @@
                        <option value="전체">전체</option>
                        <option value="기타">기타</option>
                    </select>
-                   <button type="button" onclick="location.href='Write.html' " class="WriteBtn">글쓰기</button>
+                   <button type="button" onclick="location.href='Write.html?location=<?php echo $location ?>' " class="WriteBtn">글쓰기</button>
                </div>
            </div>
             <div class="Mainform">

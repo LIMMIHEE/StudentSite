@@ -10,6 +10,16 @@
         <script src="https://code.jquery.com/jquery-3.4.1.js"   
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   
         crossorigin="anonymous"></script>
+        
+        <?php
+            $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
+            mysqli_query($conn,'SET NAMES utf8');
+            if($conn->connect_error) {
+                print $conn->connect_error;
+            }
+    
+            $location = "gather_post";
+        ?>
     </head>
     <body>
         <script>
@@ -83,7 +93,7 @@
                     </div>
                 </div>
 
-                <button type="button" onclick="location.href='Write.html'"class="WriteBtn">글쓰기</button>
+                <button type="button" onclick="location.href='Write.html?location=<?php echo $location ?>'"class="WriteBtn">글쓰기</button>
                 <!-- 테이블 -->
                 <div class="table">
                     <table class="borad_info" style="border: none;">

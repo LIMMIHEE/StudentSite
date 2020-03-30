@@ -11,6 +11,22 @@
         crossorigin="anonymous">
         </script>
 
+        <?php
+            $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
+            mysqli_query($conn,'SET NAMES utf8');
+            if($conn->connect_error) {
+                print $conn->connect_error;
+            }
+            
+            if(!isset($_GET["location"])) {
+                echo "Invalid value input";
+                exit();
+            }
+            
+            $location = $_GET["location"];
+            print "location : " . $location;
+        ?>
+
     </head>
     <body>
         <script>
@@ -63,7 +79,7 @@
                 
             </div>
 
-            <form method="post" action="./php/Write_Update.php" enctype="multipart/form-data">
+            <form method="post" action="./php/Write_Update.php?location=<?php echo $location ?>" enctype="multipart/form-data">
                 <div class="banner">
                     <div class="post">
                         <div class="carteory">

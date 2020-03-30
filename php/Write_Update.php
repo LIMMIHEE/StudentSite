@@ -3,14 +3,45 @@
    session_start();
    $id = $_SESSION['userid'];
 
-   $conn = new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
+   $conn = new mysqli("localhost","root","apmsetup","hebe");
    mysqli_query($conn,'SET NAMES utf8');
    if($conn->connect_error) {
        print $conn->connect_error;
    }
-   else {
-         print "DB";
+   // else {
+   //       print "DB";
+   // }
+
+   if(!isset($_GET["location"])) {
+      echo "Invalid value input";
+      exit();
    }
+   
+   $db_location = $_GET["location"];
+
+   print $db_location;
+   if($db_location == "gather_post") {
+      $web_location = "Gather.html";
+   } else if($db_location == "sell_post") {
+      $web_location = "Sell.html";
+   } else if($db_location == findlt_post) {
+      $web_location = "FindIt.html";
+   } else {
+      $web_location = "Curious.html";
+   }
+   // if(strcmp($db_location, "gather_post")) {
+   //    print "모야요";
+   //    $web_location = "Gather.html";
+   // } else if(strcmp($db_location, "sell_post")) {
+   //    print "팔아요";
+   //    $web_location = "Sell.html";
+   // } else if(strcmp($db_location, "findlt_post")) {
+   //    print "찾아요";
+   //    $web_location = "Findlt.html";
+   // } else {
+   //    print "궁금해요";
+   //    $web_location = "Curious.html";
+   // }
 
    // 권한(로그인되있는 사람)
    $sql ="select User_Log from memberjoin where User_id='$id'";
@@ -25,7 +56,7 @@
       $date = date('Y-m-d H:i:s');
       $Tag = $_POST['tag'];
 
-      if(isset($_FILES['profile'])) {
+      if(file_exists($_FILES['profile'])) {
          print "file";
          // $imagecheck = array('jpg', 'jpeg', 'gif', 'png', 'bmp');
          $imgpath = pathinfo($_FILES['profile']['name']);
@@ -48,7 +79,7 @@
          // 파일명 변경
    	   $real_name = $file_name;     // 원래 파일명(업로드 하기 전 실제 파일명) 
 	      $arr = explode(".", $real_name);	 // 원래 파일의 확장자명을 가져와서 그대로 적용 $file_exe	
-   	   //$file_exe = $mimeType;
+   	   $file_exe = $mimeType;
          $arr1 = $arr[0];	
          $arr2 = $arr[1];	
          $arr3 = $arr[2];
@@ -75,18 +106,23 @@
             die("파일을 지정한 디렉토리에 업로드하는데 실패했습니다.");
          }
       }
+      else {
+         print "else";
+      }
 
-      $sql2 = "insert into curious_post(id, carteory, title, content, date, tag, change_file_name, real_name, real_size) values 
+      $sql2 = "insert into " . $db_location . "(id, carteory, title, content, date, tag, change_file_name, real_name, real_size) values 
       ('$id', '$Carteory', '$Title', '$Content', '$date', '$Tag', '$change_file_name', '$real_name', '$real_size')"; 
 
       $result = mysqli_query($conn, $sql2);
 
       if($result) { //query가 정상실행 되었다면,
-         echo("<script> alert('정상적으로 글이 등록되었습니다.'); </script>");
+         echo("<script> alert('정상적으로 글이 등록되었습니다.'); location.href='../$web_location';</script>");
       }
       else {
-         echo("<script> alert('글을 등록하지 못했습니다.'); </script>");
+         echo("<script> alert('글을 등록하지 못했습니다.'); location.href='../Write.html?location=$db_location';</script>");
       }
    }
+   else {
+      print "else";
+   }
 ?>
-<script>location.href='../Write.html';</script>

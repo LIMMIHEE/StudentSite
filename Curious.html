@@ -12,6 +12,16 @@
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   
     crossorigin="anonymous">
     </script>
+
+    <?php
+        $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
+        mysqli_query($conn,'SET NAMES utf8');
+        if($conn->connect_error) {
+            print $conn->connect_error;
+        }
+
+        $location = "curious_post";
+    ?>
 </head>
 
 <body>
@@ -84,7 +94,7 @@
                         </select>
                     </div>
                 </div>
-                <button type="button" onclick="location.href='Write.html'"class="WriteBtn">글쓰기</button>
+                <button type="button" onclick="location.href='Write.html?location=<?php echo $location ?>'"class="WriteBtn">글쓰기</button>
                 <!-- 테이블 -->
                 <div class="table">
                     <table class="borad_info" style="border: none;">
@@ -107,13 +117,7 @@
                         </colgroup>
                         
                         <?php
-                            $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
-                            mysqli_query($conn,'SET NAMES utf8');
-                            if($conn->connect_error) {
-                                print $conn->connect_error;
-                            }
-
-                            $sql = "select id, title, date, tag from curious_post order by change_file_name desc limit 0,5";
+                            $sql = "select id, title, date, tag from curious_post order by date and change_file_name desc limit 0,5";
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array ($result)) {
                                 $title=$row["title"]; 
@@ -125,7 +129,7 @@
                         <tbody>
                             <tr scope="row">
                                 <td><?php echo $row['id']; ?></td>
-                                <td><a href="read.html?id=<?php echo $row['id'] ?>&title=<?php echo $row['title']?>"><?php echo $title; ?></a></td>
+                                <td><a href="read.html?location=<?php echo $location ?>&id=<?php echo $row['id'] ?>&title=<?php echo $row['title']?>"><?php echo $title; ?></a></td>
                                 <td><?php echo $row['date']; ?></td>
                                 <td><?php echo $row['tag']; ?></td>
                             </tr>

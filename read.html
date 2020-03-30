@@ -17,15 +17,16 @@
             print $conn->connect_error;
         }
 
-        if(!isset($_GET["id"])) {
+        if(!isset($_GET["location"])) {
             echo "Invalid value input";
             exit();
         }
         
+        $location = $_GET["location"];
         $id = $_GET["id"];
         $title = $_GET["title"];
 
-        $sql = "select id, carteory, title, content, date, tag, change_file_name from curious_post where id='$id' and title='$title'";
+        $sql = "select id, carteory, title, content, date, tag, change_file_name from $location where id='$id' and title='$title'";
         $result = mysqli_query($conn, $sql);
         $row = $result->fetch_assoc();
     ?>
