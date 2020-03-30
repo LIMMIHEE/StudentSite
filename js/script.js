@@ -6,6 +6,21 @@
 //     document.getElementById('Login_Logout').innerText="로그아웃";
 // }
 
+const menuBtn = document.querySelector('.Menu');
+
+let menuOpen = false;
+menuBtn.addEventListener('click',()=>{
+    if(!menuOpen){
+        menuBtn.classList.add('open');
+        menuOpen = true;
+        MenuOpenClose();
+    }else{
+        menuBtn.classList.remove('open');
+        menuOpen = false;
+        MenuOpenClose();
+    }
+});
+
 
 function Login(){
     if( document.documentElement.clientWidth >834){
