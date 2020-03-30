@@ -11,9 +11,9 @@ https://limmihee.github.io/StudentSite/<br>
 
 # UI
 > 메인 페이지<br>
-![image](https://user-images.githubusercontent.com/48482259/76165234-ae92c900-6198-11ea-963e-dd8b4624c35f.png)
+
 <br>
 
 > 로그인 및 회원가입 페이지<br>
-![image](https://user-images.githubusercontent.com/48482259/76165258-dc780d80-6198-11ea-8cee-788a184b5881.png)
+
 
