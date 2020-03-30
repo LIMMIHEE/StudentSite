@@ -3,7 +3,7 @@
    session_start();
    $id = $_SESSION['userid'];
 
-   $conn = new mysqli("localhost","root","apmsetup","hebe");
+   $conn = new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
    mysqli_query($conn,'SET NAMES utf8');
    if($conn->connect_error) {
        print $conn->connect_error;
@@ -24,7 +24,7 @@
       $web_location = "Gather.html";
    } else if($db_location == "sell_post") {
       $web_location = "Sell.html";
-   } else if($db_location == findlt_post) {
+   } else if($db_location == "findlt_post") {
       $web_location = "FindIt.html";
    } else {
       $web_location = "Curious.html";

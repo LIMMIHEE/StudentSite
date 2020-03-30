@@ -12,7 +12,7 @@
         crossorigin="anonymous"></script>
         
         <?php
-            $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
+            $conn=new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
             mysqli_query($conn,'SET NAMES utf8');
             if($conn->connect_error) {
                 print $conn->connect_error;
@@ -122,7 +122,7 @@
                             $sql = "select id, title, date, tag from gather_post order by date and change_file_name desc limit 0,5";
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array ($result)) {
-                                $title=$row["title"]; 
+                                $title=$row['title']; 
                                 if(strlen($title)>30)
                                 { 
                                     $title=str_replace($row["title"],mb_substr($row["title"],0,30,"utf-8")."...",$row["title"]);
