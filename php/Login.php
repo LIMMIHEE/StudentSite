@@ -4,8 +4,8 @@
     $conn = new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
     mysqli_query($conn,'SET NAMES utf8');
 
-    $id= $_GET['User_Id'];
-    $Password= $_GET['Password'];
+    $id= $_POST['User_Id'];
+    $Password= $_POST['Password'];
     
 
     if($id==""||  $Password=="" ){

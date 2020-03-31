@@ -3,7 +3,7 @@
    session_start();
    $id = $_SESSION['userid'];
 
-   $conn = new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
+   $conn = new mysqli("localhost","root","apmsetup","hebe");
    mysqli_query($conn,'SET NAMES utf8');
    if($conn->connect_error) {
        print $conn->connect_error;
@@ -19,29 +19,16 @@
    
    $db_location = $_GET["location"];
 
-   print $db_location;
+   // print $db_location;
    if($db_location == "gather_post") {
       $web_location = "Gather.html";
    } else if($db_location == "sell_post") {
       $web_location = "Sell.html";
-   } else if($db_location == "findlt_post") {
+   } else if($db_location == findlt_post) {
       $web_location = "FindIt.html";
    } else {
       $web_location = "Curious.html";
    }
-   // if(strcmp($db_location, "gather_post")) {
-   //    print "모야요";
-   //    $web_location = "Gather.html";
-   // } else if(strcmp($db_location, "sell_post")) {
-   //    print "팔아요";
-   //    $web_location = "Sell.html";
-   // } else if(strcmp($db_location, "findlt_post")) {
-   //    print "찾아요";
-   //    $web_location = "Findlt.html";
-   // } else {
-   //    print "궁금해요";
-   //    $web_location = "Curious.html";
-   // }
 
    // 권한(로그인되있는 사람)
    $sql ="select User_Log from memberjoin where User_id='$id'";
@@ -49,7 +36,7 @@
    $member = mysqli_fetch_array($result);
 
    if($member['User_Log']==1) {
-      print "if";
+      // print "if";
       $Carteory = $_POST['Carteory'];
       $Title = $_POST['title'];
       $Content = $_POST['content'];
@@ -106,9 +93,9 @@
             die("파일을 지정한 디렉토리에 업로드하는데 실패했습니다.");
          }
       }
-      else {
-         print "else";
-      }
+      //else {
+         //die("else");
+      //}
 
       $sql2 = "insert into " . $db_location . "(id, carteory, title, content, date, tag, change_file_name, real_name, real_size) values 
       ('$id', '$Carteory', '$Title', '$Content', '$date', '$Tag', '$change_file_name', '$real_name', '$real_size')"; 

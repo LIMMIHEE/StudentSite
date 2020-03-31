@@ -11,7 +11,7 @@
         crossorigin="anonymous">
         </script>
         <?php
-            $conn=new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
+            $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
             mysqli_query($conn,'SET NAMES utf8');
             if($conn->connect_error) {
                 print $conn->connect_error;

@@ -4,7 +4,6 @@
         <title>Hebe</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/Write-style.css">
-        
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
         <script type="text/javascript" src="js/script.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js"   
@@ -13,7 +12,7 @@
         </script>
 
         <?php
-            $conn=new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
+            $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
             mysqli_query($conn,'SET NAMES utf8');
             if($conn->connect_error) {
                 print $conn->connect_error;
@@ -24,32 +23,32 @@
                 exit();
             }
             
-           
+            $location = $_GET["location"];
         ?>
 
     </head>
     <body>
         <script>
             $.ajax({
-                url:"../php/Logout.php",
-                data: {action:'test'},
-                method:"post",
-                success: function (params) {
-                    if(params==1){
-                        document.getElementById('Login_Logout').innerText="로그아웃";
-                        document.getElementById('Log_inout_btn').onclick = function () {
-                            $.ajax({
-                                url:"../php/Logout_s.php",
-                                success: function (params) {
-                                   
-                                }
-                            })
-                           
-                        }
-                    }
-                }
-        })
-        </script>
+                   url:"../php/Logout.php",
+                   data: {action:'test'},
+                   method:"post",
+                   success: function (params) {
+                       if(params==1){
+                           document.getElementById('Login_Logout').innerText="로그아웃";
+                           document.getElementById('Log_inout_btn').onclick = function () {
+                               $.ajax({
+                                   url:"../php/Logout_s.php",
+                                   success: function (params) {
+                                      
+                                   }
+                               })
+                              
+                           }
+                       }
+                   }
+           })
+           </script>
         <div class="hero">
             <div class="navbar">
                 <a href="./index.html"> <img src="img/logo.png"></a>
@@ -80,7 +79,7 @@
                 
             </div>
 
-            <form method="post" action="php/Write_Update.php?location=<?php echo $location ?>" enctype="multipart/form-data">
+            <form method="post" action="./php/Write_Update.php?location=<?php echo $location ?>" enctype="multipart/form-data">
                 <div class="banner">
                     <div class="post">
                         <div class="carteory">
@@ -105,9 +104,9 @@
                 </div>
                 <div class="FileupBtn">
                     <input type="file" name="profile">
-                    <div class="Btn-up">
-                        <button class="uploadBtton">작성</button>
-                    </div>
+                </div>
+                <div class="Btn-up">
+                    <button class="uploadBtton">작성</button>
                 </div>
             </form>
         </div>

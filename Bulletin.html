@@ -11,6 +11,27 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   
         crossorigin="anonymous">
         </script>
+        
+        <?php
+            $conn=new mysqli("localhost","root","apmsetup","hebe");
+            mysqli_query($conn,'SET NAMES utf8');
+            if($conn->connect_error) {
+                print $conn->connect_error;
+            }
+
+            if(!isset($_GET["location"])) {
+                echo "Invalid value input";
+                exit();
+            }
+    
+            $location = $_GET["location"];
+            $id = $_GET["id"];
+            $title = $_GET["title"];
+
+            $sql = "select id, carteory, title, content, date, tag, change_file_name from $location where id='$id' and title='$title'";
+            $result = mysqli_query($conn, $sql);
+            $row = $result->fetch_assoc();
+        ?>
     </head>
     <body>
         <script>
@@ -62,19 +83,24 @@
                 </div>
             </div>
             <div class="Bulletin-mainDiv">
-                <span class="title">제목</span><br>
+                <span class="title"><?php print $row['title'] ?></span><br>
                 <div class="Bulletin_info">
-                <span>글쓴이</span> <span style="margin-left: 20px;"> 날짜</span>
-                <span style="margin-left: 20px;">댓글</span>
-                <span style="float: right; color: gray;">신고</span>
+                    <span><?php print $row['id'] ?></span> <span style="margin-left: 20px;">
+                        <?php 
+                            $phpdate = strtotime($row['date']);
+                            $date = date( 'Y-m-d H:i:s', $phpdate );
+                            print $date
+                        ?>
+                    </span>
+                    <span style="margin-left: 20px;">댓글</span>
+                    <span style="float: right; color: gray;">신고</span>
                 </div>  
                 <hr>
                 <div class="mainText">
-                    게시글 길이에 따라거 자동으로 높이 바뀌는 거
-                    게시글 길이에 따라거 자동으로 높이 바뀌는 거
-                    게시글 길이에 따라거 자동으로 높이 바뀌는 거
-                    게시글 길이에 따라거 자동으로 높이 바뀌는 거
-                    게시글 길이에 따라거 자동으로 높이 바뀌는 거
+                    <?php
+                        $content=str_replace("<br />", "\r\n", $row['content']);
+                        print $content;
+                    ?>
                 </div>
                 <hr>
                

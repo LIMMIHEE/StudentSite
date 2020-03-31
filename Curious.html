@@ -14,7 +14,7 @@
     </script>
 
     <?php
-        $conn=new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
+        $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
         mysqli_query($conn,'SET NAMES utf8');
         if($conn->connect_error) {
             print $conn->connect_error;
@@ -100,24 +100,27 @@
                     <table class="borad_info" style="border: none;">
                         <colgroup>
                             <col width="180px">
-                            <col width="1200px">
+                            <col width="1000px">
+                            <col width="100px">
                             <col width="300px">
                         </colgroup>
                         <tr class="row-info">
                             <td>글쓴이</td>
                             <td>제목</td>
                             <td>날짜</td>
+                            <td>관련 태그</td>
                         </tr>
                     </table>
                     <table class="borad_table">
                         <colgroup>
                             <col width="180px">
-                            <col width="1200px">
+                            <col width="1000px">
+                            <col width="100px">
                             <col width="300px">
                         </colgroup>
                         
                         <?php
-                            $sql = "select id, title, date, tag from curious_post order by date and change_file_name desc limit 0,5";
+                            $sql = "select id, title, date, tag from curious_post order by date desc limit 0,5";
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array ($result)) {
                                 $title=$row["title"]; 
@@ -129,9 +132,15 @@
                         <tbody>
                             <tr scope="row">
                                 <td><?php echo $row['id']; ?></td>
-                                <td><a href="read.html?location=<?php echo $location ?>&id=<?php echo $row['id'] ?>&title=<?php echo $row['title']?>"><?php echo $title; ?></a></td>
-                                <td><?php echo $row['date']; ?></td>
-                                <td><?php echo $row['tag']; ?></td>
+                                <td><a href="Bulletin.html?location=<?php echo $location ?>&id=<?php echo $row['id'] ?>&title=<?php echo $row['title']?>"><?php echo $title; ?></a></td>
+                                <td>
+                                    <?php
+                                        $phpdate = strtotime($row['date']);
+                                        $date = date("Y-m-d", $phpdate);
+                                        echo $date;
+                                    ?>
+                                </td>
+                                <td class="GatherTag"><span><?php echo $row['tag']; ?></span></td>
                             </tr>
                         </tbody>    
                         <?php } ?>
