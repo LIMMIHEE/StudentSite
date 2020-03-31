@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="css/Curious-style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="js/script.js"></script>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.js"   
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   
     crossorigin="anonymous">
     </script>
 
     <?php
-        $conn=new mysqli('localhost', 'root', 'apmsetup', 'hebe');
+        $conn=new mysqli("localhost","HeBe","hebeqlalfqjsgh","hebe");
         mysqli_query($conn,'SET NAMES utf8');
         if($conn->connect_error) {
             print $conn->connect_error;
@@ -58,19 +58,21 @@
                     <li><a href="Curious.html">궁금해요</a></li>
                 </ul>
                 <div class="navbar-icon">
-                    <img src="img/bell.png">
+                    
                     <a href="Login.html" style="text-decoration: none; color: gray; font-size: 1.4vmin; float: left; ">
                         <img src="img/user.png">
                         <p id="Login_Logout">로그인 / 회원가입</p>
                     </a>
                     <div class="Menu">
-                        <img src="img/menu.png" onclick="MenuOpenClose()">
-                        <ul class="Menu-bar">
-                            <li><a href="Gather.html">모아요</a></li>
-                            <li><a href="Sell.html">팔아요</a></li>
-                            <li><a href="FindIt.html">찾아요</a></li>
-                            <li><a href="Curious.html">궁금해요</a></li>
-                        </ul>
+                        <div class="Menu_bager">
+                            <ul class="Menu-bar"  style="right: -40px;">
+                                <li><a href="Gather.html">모아요</a></li>
+                                <li><a href="Sell.html">팔아요</a></li>
+                                <li><a href="FindIt.html">찾아요</a></li>
+                                <li><a href="Curious.html">궁금해요</a></li>
+                            </ul>
+                        </div>
+                      
                     </div>
                 </div>
             </div>
@@ -100,27 +102,24 @@
                     <table class="borad_info" style="border: none;">
                         <colgroup>
                             <col width="180px">
-                            <col width="1000px">
-                            <col width="100px">
+                            <col width="1200px">
                             <col width="300px">
                         </colgroup>
                         <tr class="row-info">
                             <td>글쓴이</td>
                             <td>제목</td>
                             <td>날짜</td>
-                            <td>관련 태그</td>
                         </tr>
                     </table>
                     <table class="borad_table">
                         <colgroup>
                             <col width="180px">
-                            <col width="1000px">
-                            <col width="100px">
+                            <col width="1200px">
                             <col width="300px">
                         </colgroup>
                         
                         <?php
-                            $sql = "select id, title, date, tag from curious_post order by date desc limit 0,5";
+                            $sql = "select id, title, date, tag from curious_post order by date and change_file_name desc limit 0,5";
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array ($result)) {
                                 $title=$row["title"]; 
@@ -132,15 +131,9 @@
                         <tbody>
                             <tr scope="row">
                                 <td><?php echo $row['id']; ?></td>
-                                <td><a href="Bulletin.html?location=<?php echo $location ?>&id=<?php echo $row['id'] ?>&title=<?php echo $row['title']?>"><?php echo $title; ?></a></td>
-                                <td>
-                                    <?php
-                                        $phpdate = strtotime($row['date']);
-                                        $date = date("Y-m-d", $phpdate);
-                                        echo $date;
-                                    ?>
-                                </td>
-                                <td class="GatherTag"><span><?php echo $row['tag']; ?></span></td>
+                                <td><a href="read.html?location=<?php echo $location ?>&id=<?php echo $row['id'] ?>&title=<?php echo $row['title']?>"><?php echo $title; ?></a></td>
+                                <td><?php echo $row['date']; ?></td>
+                                <td><?php echo $row['tag']; ?></td>
                             </tr>
                         </tbody>    
                         <?php } ?>
@@ -154,5 +147,5 @@
             </div>
         </div>
     </body>
-
+    <script type="text/javascript" src="js/script.js"></script>
 </html>
