@@ -123,11 +123,14 @@
 }
 
 .post {
+    
     width: 40vmin;
     margin-left: 7vmin;
+    
 }
 
 .carteory {
+     overflow: hidden;
     width: 860px;
     height: 30px;
 }
@@ -138,7 +141,8 @@ select {
 }
 
 .post-title {
-    position: relative;
+    overflow: hidden;
+
     width: 860px;
     margin: 18px auto 17px;
     font-size: 4vmin;
@@ -147,31 +151,34 @@ select {
     float: left;
 }
 .post-title input {
+    overflow: hidden;
     margin-left: 10px;
     border: none;
     outline:none;
     padding-bottom: 2vmin;
     border-bottom: 1.5px solid rgba(0,0,0,.05);
     font-size: 4vmin;
-    width: 92%;
+   
 }
 .post-content {
+margin-top: 60px;
     position: absolute;
     font-size: 4vmin;
-    width: auto;
+    width: 100%;
     height: 70vmin;
 }
 .post-content textarea {
     resize: none;
     margin-top: 3vmin;
     font-size: 3vmin;
-    width: 66.5vmax;
-
+width: 100%;
     height: 100%;
 }
+
+
 .Btn-up{
     display: block;
-    margin-left: 28vmax;
+
     margin-bottom: 7vmax;
     padding-top: 2.4vmin;
     width: 8vmax;
@@ -185,7 +192,7 @@ select {
     border: 0.6vmax solid turquoise;
     width: 30vmax;
     padding: 1.6vmax;
-    margin-left: 4vmax;
+
     bottom: 0;
 }
 .uploadBtton:hover{
@@ -193,16 +200,10 @@ select {
     color: gray;
 }
 .FileupBtn{
-    
-    margin-left: 40vmax;
-}
-@media (min-width:1200px){
-    .FileupBtn{
-        margin-left: 43vmax;
-    }
+    text-align: center;
 }
 @media (min-width:0px) and (max-width:922px) { 
     .post {margin-left: 2vmin; margin-right: 4vmin;}
-    .uploadBtton{margin-left: 1vmax;}
+    .uploadBtton{margin-left: 10vmax;}
     .banner {height: 102vmin;}
 }
