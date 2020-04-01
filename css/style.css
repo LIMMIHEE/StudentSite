@@ -24,19 +24,19 @@
     position: relative;
     animation-name: info;
     animation-duration: 2s;
-    animation-delay: 2s;
+
     animation-fill-mode:forwards ;
 }
 .Btn_main{
     animation-name: info_btn;
     animation-duration: 2s;
-    animation-delay: 2s;
+    
     animation-fill-mode:forwards ;
 }
 .Project_bar{
     animation-name: back_bar;
     animation-duration: 2s;
-    animation-delay: 2s;
+  
     animation-fill-mode:forwards ;
 }
 @keyframes info_btn{
