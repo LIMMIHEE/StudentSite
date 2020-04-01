@@ -86,9 +86,48 @@
     margin-left: 40px;
     cursor: pointer;
 }
+.Menu{
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.Menu_bager{
+    width: 30px; height: 6px;
+    background-color: rgb(0, 0, 0); border-radius: 5px;
+    transition:  all .5s ease-in-out;
+}
+.Menu_bager::before, .Menu_bager::after{
+    content: ''; position: absolute;
+    width: 30px; height: 6px;
+    background-color: rgb(0, 0, 0); border-radius: 5px;
+    transition:  all .5s ease-in-out;
+}
+.Menu_bager::before{
+    transform:  translateY(-12px);
+}
+.Menu_bager::after{
+    transform:  translateY(12px);
+}
+.Menu.open .Menu_bager{
+    transform: translateX(50px);
+    background: transparent;
+}
+.Menu.open .Menu_bager::before{
+    transform: rotate(45deg) translate(-35px, 35px);
+}
+.Menu.open .Menu_bager::after{
+    transform: rotate(-45deg) translate(-35px, -35px);
+}
+
 .Menu-bar {
+    margin-left: -8vmax;
     display: none;
-    font-size: 1.6vmax;
+    font-size: 1.3vmax;
     list-style: none;
     text-align: center;
     height: auto;
@@ -97,7 +136,6 @@
     width: 12vmax;
     z-index: 30;
     margin-top: 2vmax;
-    background-color: rgba(255, 255, 255, 0.514);
 }
 .Menu-bar li {
     padding: 1.3vmin;

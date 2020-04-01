@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/SellPage.css">
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-        <script type="text/javascript" src="js/script.js"></script>
+       
         <script src="https://code.jquery.com/jquery-3.4.1.js"   
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   
         crossorigin="anonymous">
@@ -44,7 +44,7 @@
                     <li><a href="Curious.html">궁금해요</a></li>
                 </ul>
                 <div class="navbar-icon">
-                    <img src="img/bell.png">
+          
                     <a href="Login.html" style="text-decoration: none; color: gray; font-size: 1.4vmin; float: left; ">
                         <img src="img/user.png">
                         <p id="Login_Logout">로그인 / 회원가입</p>
@@ -63,7 +63,18 @@
                     </div>
                 </div>
             </div>
-
+            <div id="setTitle">
+                <h3 style="font-size: 3vmax; color: rgb(57, 255, 179);">팔아요<span style="font-size: 2.5vmax; color: black;">게시판</span></h3>
+                <p style="margin-top: 2.5vmin">필요는 없지만 버리기 아까운 물건을 올려서 팔고, 필요한 물건을 값싸게 살 수
+                    있는 게시판 입니다. </p>
+                <div class="Circle_1"></div>
+                <div class="Circle_2"></div>
+                <div class="Detail_info">
+                    <p> 지금 바로 글 쓰러 가기</p>
+                    <button type="button" onclick="location.href='Write.html' " class="WriteBtn">글쓰기</button>
+                </div>
+                
+            </div>
             <div class="right-column">
                 <div class="search-Box" style="width: 99%;">
                    <img src = "img/search.png" style="box-shadow: none;">
@@ -72,7 +83,7 @@
                        <option value="전체">전체</option>
                        <option value="기타">기타</option>
                    </select>
-                   <button type="button" onclick="location.href='Write.html' " class="WriteBtn">글쓰기</button>
+                   
                </div>
            </div>
 
@@ -159,5 +170,5 @@
         </div>
     </div>
 </body>
-
+<script type="text/javascript" src="js/script.js"></script>
 </html>

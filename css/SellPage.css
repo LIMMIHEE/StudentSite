@@ -79,33 +79,89 @@
        margin-left: 40px;
        cursor: pointer;
    }
+   .Menu{
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.Menu_bager{
+    width: 30px; height: 6px;
+    background-color: rgb(0, 0, 0); border-radius: 5px;
+    transition:  all .5s ease-in-out;
+}
+.Menu_bager::before, .Menu_bager::after{
+    content: ''; position: absolute;
+    width: 30px; height: 6px;
+    background-color: rgb(0, 0, 0); border-radius: 5px;
+    transition:  all .5s ease-in-out;
+}
+.Menu_bager::before{
+    transform:  translateY(-12px);
+}
+.Menu_bager::after{
+    transform:  translateY(12px);
+}
+.Menu.open .Menu_bager{
+    transform: translateX(50px);
+    background: transparent;
+}
+.Menu.open .Menu_bager::before{
+    transform: rotate(45deg) translate(-35px, 35px);
+}
+.Menu.open .Menu_bager::after{
+    transform: rotate(-45deg) translate(-35px, -35px);
+}
+
+.Menu-bar {
+    margin-left: -8vmax;
+    display: none;
+    font-size: 1.3vmax;
+    list-style: none;
+    text-align: center;
+    height: auto;
+    border: 0;
+    position: absolute;
+    width: 12vmax;
+    z-index: 30;
+    margin-top: 2vmax;
+}
+.Menu-bar li {
+    padding: 1.3vmin;
+}
+.Menu-bar li :hover {
+    color: turquoise;
+    padding: 1.3vmin;
+}
+.Menu-bar li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
    
-   
-   .Menu-bar {
-       display: none;
-       font-size: 1.6vmax;
-       list-style: none;
-       text-align: center;
-       height: auto;
-       border: 0;
-       position: absolute;
-       width: 12vmax;
-       z-index: 30;
-       margin-top: 2vmax;
-       background-color: rgba(255, 255, 255, 0.514);
-   }
-   .Menu-bar li {
-       padding: 1.3vmin;
-   }
-   .Menu-bar li :hover {
-       color: turquoise;
-       padding: 1.3vmin;
-   }
-   .Menu-bar li a {
-       text-decoration: none;
-       color: rgb(0, 0, 0);
-   }
-   
+
+   #setTitle {
+    margin: 50px;
+    margin-bottom: 100px;
+    }
+    .Circle_1{
+        width: 6vmin;
+        height: 6vmin;
+        margin-top: -100px; margin-left: -20px;
+        background-color: rgb(217, 255, 231);
+        border-radius: 100%;
+    }
+    .Circle_2{
+        margin-top: -10px; margin-bottom: 10px;
+        margin-left: -25px;
+        width: 3vmin;
+        height: 3vmin;
+        background-color: rgb(166, 255, 225);
+        border-radius: 100%;
+    }
    /* navbar */
    .search-Box{
         width: 45%;
@@ -131,18 +187,18 @@
         width: 10vmax;
         margin-right: 2vmin;
         margin-top: 0.7vmin;
-        height: 3vmax;
+        height: 30px;
     }
     .WriteBtn{
         width: 10vmax;
-        border-style: none;
-        border:0.5vmax solid rgb(129, 233, 104);
+        border-style: none; margin-left: -1.2vmin;
+        border:0.5vmax solid rgb(91, 255, 192);
         background-color: rgba(128, 128, 128, 0);
         border-radius: 2em;
         padding: 1vmin;
     }
     .WriteBtn:hover{
-        border: 0.5vmax solid rgb(75, 174, 255);
+        border: 0.5vmax solid rgb(38, 207, 193);
         color:gray;
     }
 
@@ -155,22 +211,26 @@
         align-content:stretch;
    }
    .Post {
+        position: relative;
         display: inline-block;
-        border-radius: 3vmax;
-        width: 40vmin;
+        
+        width: 27vmin;
         padding: 0.7vmax 1.5vmin 1vmax;
+
         background-color: rgb(255, 255, 255);
         text-align: center;
     }
     .inner {
+        overflow: hidden;
         position: relative;
         border: 1px solid rgb(250, 247, 247);
         background: #fff;
+        width: 100%;
     }
     .inner .imgbox{
-        margin-left: 2.3vmin;
-        width: 35vmin;
-        height:35vmin;
+
+        width: 30vmin;
+        height:30vmin;
     }
     .inner span{
         font-weight: bold;
@@ -201,8 +261,15 @@
     padding-top: 5px ;padding-bottom: 5px ;
     text-align: center;
     height: 40px;    width: 100%;
-    background: rgba(209, 235, 115, 0.644);
+    background: rgba(199, 255, 236, 0.644);
     color:white;
+}
+.Detail_info{
+    margin-top: 80px;
+}
+.Detail_info p{
+   margin-bottom: 10px;
+   font-weight: 600;
 }
 
    
