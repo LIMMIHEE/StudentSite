@@ -60,7 +60,7 @@
   
   .name {
     display: block;
-    color: turquoise;
+    color: rgb(54, 54, 54);
   }
   
   .name:not(.light) {
@@ -87,13 +87,12 @@
 
 
 
-
  /* PC */
  .wrap{width:1200px;  margin:0 auto;}
  .navbar{position: relative;}
  .banner{ position: relative; height: 1000px;}
  .left-column{ position: absolute;width: 100%; float: left;}
- .go-otherPage{float:left;display: none;position: relative; width: 55%; padding: 20px;}
+ .go-otherPage{float:left;display: none;position: relative; width: 70%; padding: 20px;}
  
  .right-column{position: absolute; right: 0; width: 40%; float: right;top:0;}
 .Menu_bager{display: none;}
@@ -267,8 +266,8 @@
 .left-column h3{
     font-size:  2.5vmax;
 }
-.left-column p{
-    font-weight: 550;
+.left-column .Main-p-Tag{
+    font-weight: 1000;
     font-size:  1.2vmax;
     color: rgba(0, 0, 0, 0.76);
     margin : 50px 0;
@@ -293,7 +292,7 @@
 }
 
 .go-otherPage{
-    margin-left: 20%;
+    margin-left: 10%;
     text-align: center;
 }
 .go-otherPage button{
@@ -309,8 +308,8 @@
     color:  rgb(255, 255, 255);
     font-weight: bold;
     background:  transparent;
-    background: linear-gradient( rgb(255, 244, 86), rgb(135, 240, 103));
-    box-shadow: 0 2px 15px rgba(146, 255, 132, 0.712);
+    background: linear-gradient( rgb(123, 196, 255), rgb(135, 255, 215));
+    box-shadow: 0 2px 15px rgba(114, 253, 246, 0.795);
     
 }
 
@@ -320,17 +319,43 @@
     height: 700px;
 	background-image: linear-gradient(  #c5eaff, rgb(255, 255, 255));
 } 
-.content { 	
-	max-width: 50em;
-    margin: 0 auto; 
-}
+
 
 .Project_bar{
     transform: skewY(-9deg);
     background-color: rgba(114, 232, 240, 0.534); width: 85%; height: 80px; border-radius: 20px; margin:3vmax;
     margin-left: -50vmin; position: relative;
 }
-
+.content { 	
+    overflow: hidden;
+	display: flex;
+    margin: 0 auto; 
+    
+}
+.text-content{
+    width: 50%;
+    margin: 40px;
+    text-align: left; 
+    font-weight: 900;
+    
+}
+.text-content p{
+    color: rgb(64, 133, 224);
+    font-size: 2vmax;
+    margin-top: 30px;
+}
+.text-content p::after{
+    width: 60px;
+    border: 4px solid #00a2ff;
+}
+.side-Web-name{
+    position: fixed;
+    font-weight: bold;  font-size: 15px;
+    line-height: 1.87;  letter-spacing: 4px;
+    right: 0px; bottom: 250px;
+    text-transform: uppercase;
+    -webkit-transform: rotate(-90deg);
+}
 @media (max-width:870px){/* 핸드폰 */
     .Menu-bar li :hover {
         color: rgb(241, 255, 238);font-weight: 600;
@@ -338,7 +363,11 @@
     }
     .banner{ top: 40px; }
     .left-column-ani span {color:rgb(238, 255, 243);}
-   }
+    .text-content{  width: 100%; font-size: x-large;  }
+    .content .img-content{
+        display: block;
+    }
+}
 
 @media (max-width:700px){
     .go-otherPage{margin-left: 0;}
