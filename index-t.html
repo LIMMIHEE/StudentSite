@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <from>
-      <input id="message" placeholder="Enter message" autocomplete="off">
-      <input type="submit" id="add_btn">
+      
 
-      <ul id="massages_list"></ul>
+      <div style="border-radius: 30px; margin: 30px; padding: 40px; background: linear-gradient(rgb(61, 187, 145), rgb(57, 126, 175));
+      text-align: center;">
+        <textarea id="massages_list" style="width: 500px; height: 700px; color: white; font-weight: 600;background: none; border: none; line-height:150%; " readonly ></textarea>
+        <br>
+        <input id="message" placeholder="Enter message" autocomplete="off">
+        <input type="submit" id="add_btn">
+      </div>
+      
+      <!--
+      <ul id="massages_list" style="background-color: antiquewhite; width: 500px; height: 700px; overflow: hidden;"></ul>
+      -->
     </from>
   </body>
 </html>
@@ -26,6 +36,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
 
 <script>
+
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyCJ_SFuMgYwMOfbyewzrmUzbrxhDuG20J0",
@@ -54,16 +65,21 @@
         "sender":UserName,
         "message":chat_content.value
       });
-      
+      chat_content.value="";
   });
   var added_chat="";
   database.ref(ChatName).on("child_added",snap => {
-    added_chat +="<li>";
-    added_chat+=snap.val().sender+":"+snap.val().message;
-    added_chat +="</li>";
+    //added_chat +="<li>";
+    added_chat+=snap.val().sender+":"+snap.val().message +"\n";
+    //added_chat +="</li>";
 
     document.getElementById('massages_list').innerHTML=added_chat;
   });
+  var textarea = document.getElementById('massages_list');
+  setInterval(function(){
+    
+    textarea.scrollTop = textarea.scrollHeight;
+}, 1000);
 
 /*
 
