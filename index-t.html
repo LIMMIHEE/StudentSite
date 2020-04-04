@@ -50,21 +50,50 @@
   const sendMessage_btn = document.getElementById('add_btn');
   sendMessage_btn.addEventListener('click',(e) => {
       e.preventDefault();
+      database.ref(ChatName).push().set({
+        "sender":UserName,
+        "message":chat_content.value
+      });
+      
+  });
+  var added_chat="";
+  database.ref(ChatName).on("child_added",snap => {
+    added_chat +="<li>";
+    added_chat+=snap.val().sender+":"+snap.val().message;
+    added_chat +="</li>";
+
+    document.getElementById('massages_list').innerHTML=added_chat;
+  });
+
+/*
+
+
+
+ const sendMessage_btn = document.getElementById('add_btn');
+  sendMessage_btn.addEventListener('click',(e) => {
+      e.preventDefault();
       database.ref('/'+ChatName+'/'+UserName).set({
+      database.ref(ChatName).push().set({
         "sender":UserName,
         "message":chat_content.value
       });
 
+      
   });
 
   database.ref('/'+ChatName+'/'+UserName).on("value",snap => {
     var added_chat="";
+  var added_chat="";
+  database.ref(ChatName).on("child_added",snap => {
     added_chat +="<li>";
     added_chat+=snap.val().sender+":"+snap.val().message;
     added_chat +="</li>";
 
     document.getElementById('massages_list').innerHTML+=added_chat;
+    document.getElementById('massages_list').innerHTML=added_chat;
   });
+
+  */
 
 
 </script>
