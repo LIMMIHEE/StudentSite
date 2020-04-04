@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <from>
+      <input id="message" placeholder="Enter message" autocomplete="off">
+      <input type="submit" id="add_btn">
+    </from>
+  </body>
+</html>
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCJ_SFuMgYwMOfbyewzrmUzbrxhDuG20J0",
+    authDomain: "hebe-2e014.firebaseapp.com",
+    databaseURL: "https://hebe-2e014.firebaseio.com",
+    projectId: "hebe-2e014",
+    storageBucket: "hebe-2e014.appspot.com",
+    messagingSenderId: "756847078393",
+    appId: "1:756847078393:web:0e0828b2f0c82589caab28",
+    measurementId: "G-X42GQ76LQH"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  var ChatName = prompt("Enter ChatRoom Name");
+  var UserName = prompt("Enter Your Name");
+  var chat_content = document.getElementById('message');
+
+  const database = firebase.database();
+
+  const sendMessage_btn = document.getElementById('add_btn');
+  sendMessage_btn.addEventListener('click',(e) => {
+      e.preventDefault();
+      database.ref('/'+ChatName+'/'+UserName).set({
+        "sender":UserName,
+        "message":chat_content.value
+      });
+
+  });
+
+
+</script>
