@@ -9,6 +9,8 @@
     <from>
       <input id="message" placeholder="Enter message" autocomplete="off">
       <input type="submit" id="add_btn">
+
+      <ul id="massages_list"></ul>
     </from>
   </body>
 </html>
@@ -53,6 +55,15 @@
         "message":chat_content.value
       });
 
+  });
+
+  database.ref('/'+ChatName+'/'+UserName).on("value",snap => {
+    var added_chat="";
+    added_chat +="<li>";
+    added_chat+=snap.val().sender+":"+snap.val().message;
+    added_chat +="</li>";
+
+    document.getElementById('massages_list').innerHTML+=added_chat;
   });
 
 
